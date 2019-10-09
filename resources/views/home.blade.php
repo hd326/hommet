@@ -26,6 +26,7 @@
 </div>
 
 <div id="search">
+    <div id="search-wrap">
     <i class="fas fa-search"></i>
     <select>
         <option value="" disabled selected hidden>Property Type</option>
@@ -45,6 +46,7 @@
     </select>
     <button>SEARCH</button>
     <p>Advanced Search</p>
+</div>
 </div>
 <script src="{{ asset('js/main.js') }}"></script>
 @endsection
