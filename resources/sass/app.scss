@@ -729,10 +729,11 @@ header {
 #featured {
     margin-top: 50px;
     text-align: center;
-    height: 40vw;
+    height: 100%;
     position:relative;
+
     #featured-text{
-        margin-bottom: 25px;
+        margin-bottom: 35px;
     }
 
     #featured-wrap {
@@ -741,6 +742,7 @@ header {
         height: 100%;
         grid-column-gap: 20px;
         position:relative;
+        padding:  0px 50px;
 
         .feature {
             display: grid;
@@ -754,6 +756,24 @@ header {
                 width: 100%;
                 background: url('../images/4.jpg');
                 background-size: cover;
+                position:relative;
+                .feature-sec-helper{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 20%;
+                    background-color:rgba(0, 0, 0, 0.503);
+                    left: 0;
+                    bottom: 0;
+                    text-align:left;
+                    display: grid;
+                    color: white;
+                    
+                    p{
+                        margin-left: 10px;
+                        margin-top: 7.5px;
+                    }
+                }
             }
 
             .feature-sec:nth-of-type(2) {
@@ -762,18 +782,130 @@ header {
                 position:relative;
                 display: grid;
                 grid-template-rows: 1fr .9fr 1fr;
+                
                 p{
                     line-height: 1px;
                 }
                 p.address{
                     margin-top: 50px;
+                    font-size: 18px;
+                }
+                p.city-state{
+                    color: gray;
+                    font-size: 12px;
+                    margin-top: 5px;
                 }
                 p.details{
                     justify-self: flex-start;
                     align-self: flex-end;
                     margin-left: 25px;
-
+                    display:grid;
+                    grid-template-columns: 1fr 1fr;
+                    grid-gap: 10px;
+                    .details-sec{
+                        display: grid;
+                        grid-template-rows: 1fr 1fr;
+                        grid-gap: 10px;
+                        font-size: 12px;
+                    }
+                    .details-sec i{
+                        color: $gold;
+                        font-size: 16px;
+                    }
                 }
+            }
+        }
+    }
+}
+
+@include mQ(991px) {
+    #featured{
+        #featured-wrap{
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            grid-row-gap: 20px;
+            .feature{
+                grid-template-rows: 1.4fr .6fr;
+                .feature-sec:nth-of-type(1){
+                    .feature-sec-helper{
+                        p{
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#contact-us{
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background-color: #2b2b2b;
+    margin-top: 50px;
+    color: #fbfbfb;
+    #contact-us-wrap {
+        display: grid;
+        grid-template-columns: 1.5fr .5fr;
+        grid-gap: 30px;
+        button{
+            background-color: #2b2b2b;
+            border-radius: 50px;
+            border: 1px solid #fbfbfb;
+            padding: 0px 0px;
+            color: #fbfbfb;
+            transition: .5s ease;
+            &:hover{
+                background-color: $gold;
+                border: 1px solid $gold;
+            }
+        }
+    }
+}
+
+#communities{
+    text-align:center;
+    margin-top: 50px;
+    height: 35vw;
+    position:relative;
+
+    #communities-wrap{
+        padding: 0px 50px;
+        display: grid;
+        height: 100%;
+        width: 100%;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 20px;
+        .community{
+            background:url('../images/5.jpg');
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+            position:relative;
+            
+            &:after{
+                content: '';
+                position:absolute;
+                height: 2px;
+                background-color: $gold;
+                bottom: 0;
+                width: 100%;
+                left: 0;
+                transition: .3s ease;
+            }
+            &:hover:after{
+                height: 7.5px;
+            }
+            .community-helper{
+                color: #fbfbfb;
+                position: absolute;
+                width: 100%;
+                height: 40%;
+                background-color:rgba(0, 0, 0, 0.524);
+                bottom: 0;
+                display: grid;
+                align-content:center;
             }
         }
     }

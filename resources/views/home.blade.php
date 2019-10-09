@@ -85,6 +85,9 @@
     <div id="featured-wrap">
         <div class="feature">
             <div class="feature-sec">
+                <div class="feature-sec-helper">
+                    <p>$500,000</p>
+                </div>
             </div>
             <div class="feature-sec">
                 <p class="address">1940 S Highway A1a</p>
@@ -92,35 +95,104 @@
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
-                        <span class="bed-detail">12</span>
+                        <span class="bed-detail">12 BD</span>
                     </span>
                     <span class="details-sec">
                         <i class="fas fa-bath"></i>
-                        <span class="bath-detail">12</span>
+                        <span class="bath-detail">12 BA</span>
                     </span>
                 </p>
             </div>
         </div>
+
         <div class="feature">
             <div class="feature-sec">
+                <div class="feature-sec-helper">
+                    <p>$500,000</p>
+                </div>
             </div>
             <div class="feature-sec">
+                <p class="address">3700 Ocean Drive</p>
+                <p class="city-state">VERO BEACH, FL</p>
+                <p class="details">
+                    <span class="details-sec">
+                        <i class="fas fa-bed"></i>
+                        <span class="bed-detail">12 BD</span>
+                    </span>
+                    <span class="details-sec">
+                        <i class="fas fa-bath"></i>
+                        <span class="bath-detail">12 BA</span>
+                    </span>
+                </p>
             </div>
         </div>
+
         <div class="feature">
             <div class="feature-sec">
+                <div class="feature-sec-helper">
+                    <p>$500,000</p>
+                </div>
             </div>
             <div class="feature-sec">
+                <p class="address">2150 S Highway A1a</p>
+                <p class="city-state">VERO BEACH, FL</p>
+                <p class="details">
+                    <span class="details-sec">
+                        <i class="fas fa-bed"></i>
+                        <span class="bed-detail">12 BD</span>
+                    </span>
+                    <span class="details-sec">
+                        <i class="fas fa-bath"></i>
+                        <span class="bath-detail">12 BA</span>
+                    </span>
+                </p>
             </div>
         </div>
+
         <div class="feature">
             <div class="feature-sec">
+                <div class="feature-sec-helper">
+                    <p>$500,000</p>
+                </div>
             </div>
             <div class="feature-sec">
+                <p class="address">0 N. Ocean Drive</p>
+                <p class="city-state">VERO BEACH, FL</p>
+                <p class="details">
+                    <span class="details-sec">
+                        <i class="fas fa-bed"></i>
+                        <span class="bed-detail">12 BD</span>
+                    </span>
+                    <span class="details-sec">
+                        <i class="fas fa-bath"></i>
+                        <span class="bath-detail">12 BA</span>
+                    </span>
+                </p>
             </div>
         </div>
     </div>
-
 </div>
-<script src="{{ asset('js/main.js') }}"></script>
+
+<div id="contact-us">
+    <div id="contact-us-wrap">
+        <h2>Contact us for a free consultation. No Obligation. No Catch.</h2>
+        <button>Contact Us</button>
+    </div>
+</div>
+
+
+<div id="communities">
+    <div id="communities-text">
+        <h2>Featured Communities</h2>
+    </div>
+    <div id="communities-wrap">
+        <div class="community"><div class="community-helper">Rochester</div></div>
+        <div class="community"></div>
+        <div class="community"></div>
+        <div class="community"></div>
+    </div>
+</div>
+
+<script src="{{ asset('js/main.js') }}">
+</script>
 @endsection
