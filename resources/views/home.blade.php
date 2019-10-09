@@ -27,26 +27,100 @@
 
 <div id="search">
     <div id="search-wrap">
-    <i class="fas fa-search"></i>
-    <select>
-        <option value="" disabled selected hidden>Property Type</option>
-    </select>
-    <input value="" placeholder="City or ZIP">
-    <select>
-        <option value="" disabled selected hidden>Bedrooms</option>
-    </select>
-    <select>
-        <option value="" disabled selected hidden>Bathrooms</option>
-    </select>
-    <select>
-        <option value="" disabled selected hidden>Min Price</option>
-    </select>
-    <select>
-        <option value="" disabled selected hidden>Max Price</option>
-    </select>
-    <button>SEARCH</button>
-    <p>Advanced Search</p>
+        <i class="fas fa-search"></i>
+        <select>
+            <option value="" disabled selected hidden>Property Type</option>
+        </select>
+        <input value="" placeholder="City or ZIP">
+        <select>
+            <option value="" disabled selected hidden>Bedrooms</option>
+        </select>
+        <select>
+            <option value="" disabled selected hidden>Bathrooms</option>
+        </select>
+        <select>
+            <option value="" disabled selected hidden>Min Price</option>
+        </select>
+        <select>
+            <option value="" disabled selected hidden>Max Price</option>
+        </select>
+        <button>SEARCH</button>
+        <p>Advanced Search</p>
+    </div>
 </div>
+
+<div id="introduction">
+    <div id="introduction-wrap">
+        <div class="introduction-sec"></div>
+        <div class="introduction-sec">
+            <h2><span id="welcome-to">Welcome to</span><br /> Hommet Real Estate</h2><br />
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eu consequat ligula. Etiam porta, lacus
+                sed convallis lobortis, tellus ipsum lacinia libero, vitae porta sapien magna eu odio. Cras vehicula vel
+                sapien vitae laoreet. Maecenas luctus nunc at orci consectetur bibendum. Mauris posuere maximus odio, et
+                vulputate libero semper quis. Etiam varius eu purus in sagittis. Integer ullamcorper orci sit amet
+                posuere hendrerit. Morbi et purus mauris.</p><br />
+            <p>Integer nec arcu vehicula eros lobortis lacinia eu et odio. Suspendisse a mi erat. Nunc porta iaculis
+                magna, in imperdiet urna pretium et. Aenean ex lorem, tincidunt ut luctus sit amet, vulputate et mi.
+                Nullam laoreet magna ac velit pharetra aliquam. Aliquam felis ex, laoreet nec gravida a, scelerisque ut
+                diam.</p>
+        </div>
+    </div>
+</div>
+
+<div id="services">
+    <div id="services-wrap">
+        <div class="service"><button>Find Your Dream Home<i class="fas fa-home"></i></button></div>
+        <div class="service"><button>Sell Your Home<i class="fas fa-dollar-sign"></i></button></div>
+        <div class="service"><button>What's My Home Worth?<i class="fas fa-search-location"></i></button></div>
+        {{-- <div class="service">Search Properties</div>
+        <div class="service">Sign Up</div>
+        <div class="service">Contact Us</div> --}}
+    </div>
+</div>
+
+<div id="featured">
+    <div id="featured-text">
+        <h2>Featured Listings</h2>
+    </div>
+    <div id="featured-wrap">
+        <div class="feature">
+            <div class="feature-sec">
+            </div>
+            <div class="feature-sec">
+                <p class="address">1940 S Highway A1a</p>
+                <p class="city-state">VERO BEACH, FL</p>
+                <p class="details">
+                    <span class="details-sec">
+                        <i class="fas fa-bed"></i>
+                        <span class="bed-detail">12</span>
+                    </span>
+                    <span class="details-sec">
+                        <i class="fas fa-bath"></i>
+                        <span class="bath-detail">12</span>
+                    </span>
+                </p>
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-sec">
+            </div>
+            <div class="feature-sec">
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-sec">
+            </div>
+            <div class="feature-sec">
+            </div>
+        </div>
+        <div class="feature">
+            <div class="feature-sec">
+            </div>
+            <div class="feature-sec">
+            </div>
+        </div>
+    </div>
+
 </div>
 <script src="{{ asset('js/main.js') }}"></script>
 @endsection
