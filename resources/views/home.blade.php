@@ -3,6 +3,71 @@
 @section('title', '| Home Page')
 
 @section('content')
+<header>
+        <div id="header-mobile">
+            <ul>
+                <li>
+                    <div id="icon">
+                        <div id="hamburger"></div>
+                    </div>
+                </li>
+                <li><i class="fas fa-phone"></i></li>
+                <li><i class="fas fa-envelope-square"></i></li>
+            </ul>
+        </div>
+        <div id="header-container">
+            <nav id="left-side">
+                <ul>
+                    <li>
+                        <!--<i class="fab fa-autoprefixer fa-3x"></i>--><span id="logo-text">HOMMET</span><br /><span id="logo-aide">Real Estate Services</span>
+                    </li>
+                </ul>
+            </nav>
+            <nav id="right-side">
+                <ul id="top-nav">
+                    <li class="top-main" id="social-media">
+                        <ul>
+                            <li><i class="fab fa-facebook"></i></li>
+                            <li><i class="fab fa-twitter"></i></li>
+                            <li><i class="fab fa-youtube"></i></li>
+                            <li><i class="fab fa-linkedin"></i></li>
+                            <li><i class="fab fa-pinterest"></i></li>
+                            <li><i class="fab fa-instagram"></i></li>
+                        </ul>
+                    </li>
+                    <li class="top-main"><i class="fas fa-phone"></i> 123.456.7890</li>
+                    <li class="top-main"><i class="fas fa-envelope-square"></i> agent@hommet.com</li>
+                </ul>
+                <ul id="bottom-nav">
+                    <li class="main-categories">
+                        <span class="main-categories-text">HOME</span>
+                    </li>
+                    <li class="main-categories">
+                        <span class="main-categories-text">PROPERTIES</span>
+                    </li>
+                    <li class="main-categories">
+                        <i class="caret fas fa-chevron-down fa-1x"></i>
+                        <span class="main-categories-text">COMMUNITIES</span>
+                    </li>
+                    <li class="main-categories">
+                        <i class="caret fas fa-chevron-down fa-1x"></i>
+                        <span class="main-categories-text">BUYERS</span>
+                    </li>
+                    <li class="main-categories">
+                        <span class="main-categories-text">SELLERS</span>
+
+                    </li>
+                    <li class="main-categories">
+                        <span class="main-categories-text">ABOUT</span>
+                    </li>
+                    <li class="main-categories">
+                        <span class="main-categories-text">CONTACT</span>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+    </header>
 <div id="hero">
 
     <div class="hero-background-image"></div>
@@ -90,8 +155,8 @@
                 </div>
             </div>
             <div class="feature-sec">
-                <p class="address">1940 S Highway A1a</p>
-                <p class="city-state">VERO BEACH, FL</p>
+                <p class="address">8341 Red Fox Way</p>
+                <p class="city-state">Elk Grove, CA 95758</p>
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
@@ -112,8 +177,8 @@
                 </div>
             </div>
             <div class="feature-sec">
-                <p class="address">3700 Ocean Drive</p>
-                <p class="city-state">VERO BEACH, FL</p>
+                <p class="address">9126 Brienne Way</p>
+                <p class="city-state">Elk Grove, CA 95758</p>
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
@@ -134,8 +199,8 @@
                 </div>
             </div>
             <div class="feature-sec">
-                <p class="address">2150 S Highway A1a</p>
-                <p class="city-state">VERO BEACH, FL</p>
+                <p class="address">9743 White Pine Way</p>
+                <p class="city-state">Elk Grove, CA 95624</p>
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
@@ -156,8 +221,8 @@
                 </div>
             </div>
             <div class="feature-sec">
-                <p class="address">0 N. Ocean Drive</p>
-                <p class="city-state">VERO BEACH, FL</p>
+                <p class="address">8818 Kepler Ct</p>
+                <p class="city-state">Elk Grove, CA 95758</p>
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
@@ -186,13 +251,158 @@
         <h2>Featured Communities</h2>
     </div>
     <div id="communities-wrap">
-        <div class="community"><div class="community-helper">Rochester</div></div>
-        <div class="community"></div>
-        <div class="community"></div>
-        <div class="community"></div>
+        <div class="community">
+            <div class="community-helper">Elk Grove</div>
+        </div>
+        <div class="community">
+            <div class="community-helper">Roseville</div>
+        </div>
+        <div class="community">
+            <div class="community-helper">Rocklin</div>
+        </div>
+        <div class="community">
+            <div class="community-helper">Citrus Heights</div>
+        </div>
     </div>
 </div>
 
+<div id="testimonials">
+    <div id="testimonials-text">
+        <h2>Testimonials</h2>
+    </div>
+    <div id="testimonial-container">
+        <div id="testimonial-arrow-left" class="testimonial-arrow"></div>
+        <div id="testimonial-slider">
+            <div id="testimonial-slider-container">
+                <div class="testimonial slide1" id="lastClone">
+                    <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
+                        purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
+                        euismod risus sit amet, feugiat metus. Suspendisse rutrum sodales sem, a tempor augue
+                        consectetur vitae. Duis fringilla lobortis augue sed vestibulum. Aliquam erat volutpat. </div>
+                </div>
+
+                <div class="testimonial slide2">
+                    <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
+                        purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
+                        euismod risus sit amet, feugiat metus. Suspendisse rutrum sodales sem, a tempor augue
+                        consectetur vitae. Duis fringilla lobortis augue sed vestibulum. Aliquam erat volutpat. </div>
+                </div>
+
+                <div class="testimonial slide3">
+                    <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
+                        purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
+                        euismod risus sit amet, feugiat metus. Suspendisse rutrum sodales sem, a tempor augue
+                        consectetur vitae. Duis fringilla lobortis augue sed vestibulum. Aliquam erat volutpat. </div>
+                </div>
+
+                <div class="testimonial slide4">
+                    <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
+                        purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
+                        euismod risus sit amet, feugiat metus. Suspendisse rutrum sodales sem, a tempor augue
+                        consectetur vitae. Duis fringilla lobortis augue sed vestibulum. Aliquam erat volutpat. </div>
+                </div>
+
+                <div class="testimonial slide5" id="firstClone">
+                    <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
+                        purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
+                        euismod risus sit amet, feugiat metus. Suspendisse rutrum sodales sem, a tempor augue
+                        consectetur vitae. Duis fringilla lobortis augue sed vestibulum. Aliquam erat volutpat. </div>
+                </div>
+            </div>
+        </div>
+        <div id="testimonial-arrow-right" class="testimonial-arrow"></div>
+    </div>
+</div>
+
+<div id="more">
+    <div id="more-sec-wrap">
+        <div class="more-sec">
+            <div class="more-sec-title">
+                <h3>Latest Posts <i class="fas fa-book-open"></i></h3>
+            </div>
+            <div class="more-sec-sections-wrap">
+                <div class="more-sec-sections">
+                    <div class="picture"></div>
+                    <div class="post">
+                        <h4>SIGNS THAT NOW IS THE TIME TO SELL YOUR HOME</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem lacus, iaculis in
+                            fringilla a, dignissim ut quam. Quisque elementum libero non aliquam porta.</p>
+                        <a>Read More &#187;</a>
+                    </div>
+                </div>
+                <div class="more-sec-sections">
+                    <div class="picture"></div>
+                    <div class="post">
+                        <h4>SIGNS THAT NOW IS THE TIME TO SELL YOUR HOME</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi lorem lacus, iaculis in
+                            fringilla a, dignissim ut quam. Quisque elementum libero non aliquam porta. </p>
+                        <a>Read More &#187;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="more-sec">
+            <div class="more-sec-title">
+                <h3>Areas of Expertise<i class="fas fa-map-marked-alt"></i></h3>
+            </div>
+            <div class="more-sec-sections-wrap">
+                <div class="more-sec-sections">
+                    <ul>
+                        <li>Citrus Heights</li>
+                        <li>Elk Grove</li>
+                        <li>Folsom</li>
+                        <li>Galt</li>
+                        <li>Isleton</li>
+                    </ul>
+                </div>
+                <div class="more-sec-sections">
+                    <ul>
+                        <li>Rancho Cordova</li>
+                        <li>Placerville</li>
+                        <li>Natomas</li>
+                        <li>Rocklin</li>
+                        <li>Gold River</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div id="footer-container">
+        <div class="footer-sec">
+            <h3><span id="logo-text">HOMMET</span></h3>
+            <span>REAL ESTATE SERVICES</span>
+        </div>
+        <div class="footer-sec">
+            {{-- <div class="footer-sec-row">
+                <ul>
+                    <li><i class="fab fa-facebook"></i></li>
+                    <li><i class="fab fa-twitter"></i></li>
+                    <li><i class="fab fa-youtube"></i></li>
+                    <li><i class="fab fa-linkedin"></i></li>
+                    <li><i class="fab fa-pinterest"></i></li>
+                    <li><i class="fab fa-instagram"></i></li>
+                </ul>
+            </div> --}}
+            <div class="footer-sec-row">
+                <ul>
+                    <li>HOME</li>
+                    <li>PROPERTIES</li>
+                    <li>COMMUNITIES</li>
+                    <li>BUYERS</li>
+                    <li>SELLERS</li>
+                    <li>ABOUT</li>
+                    <li>CONTACT</li>
+                </ul>
+            </div>
+            <div class="footer-sec-row">
+                &copy; 2019 HOMMET. All rights reserved. Real Estate Website Design by Richard Duong
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="{{ asset('js/main.js') }}">
 </script>
 @endsection
