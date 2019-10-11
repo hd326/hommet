@@ -511,15 +511,15 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
 }
 #introduction #introduction-wrap {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
-  grid-gap: 75px;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-gap: 50px;
 }
 #introduction #introduction-wrap .introduction-sec:nth-of-type(1) {
   background: url("../images/woman.jpg") no-repeat;
   background-size: cover;
   background-position: center;
-  height: 35vw;
-  width: 100%;
+  width: 350px;
+  height: 350px;
 }
 #introduction #introduction-wrap .introduction-sec:nth-of-type(2) h2 {
   text-transform: uppercase;
@@ -536,33 +536,24 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
 
 @media screen and (max-width: 768px) {
   #introduction {
-    height: 1025px;
     padding: 20px;
   }
   #introduction #introduction-wrap {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.5fr 1fr;
-    grid-gap: 20px;
+    grid-template-rows: 1fr 1fr;
+    grid-gap: 0px;
   }
   #introduction #introduction-wrap .introduction-sec:nth-of-type(1) {
     grid-row: 2;
-    height: 400px;
     background-position-y: 0px;
-    width: 100%;
+    display: grid;
+    justify-self: center;
   }
   #introduction #introduction-wrap .introduction-sec:nth-of-type(2) {
     grid-row: 1;
   }
   #introduction #introduction-wrap .introduction-sec:nth-of-type(2) h2 {
     text-align: center;
-  }
-}
-@media screen and (max-width: 500px) {
-  #introduction {
-    height: 1025px;
-  }
-  #introduction #introduction-wrap .introduction-sec:nth-of-type(1) {
-    height: 350px;
   }
 }
 #services {
