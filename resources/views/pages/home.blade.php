@@ -4,70 +4,71 @@
 
 @section('content')
 <header>
-        <div id="header-mobile">
+    <div id="header-mobile">
+        <ul>
+            <li>
+                <div id="icon">
+                    <div id="hamburger"></div>
+                </div>
+            </li>
+            <li><i class="fas fa-phone"></i></li>
+            <li><i class="fas fa-envelope-square"></i></li>
+        </ul>
+    </div>
+    <div id="header-container">
+        <nav id="left-side">
             <ul>
                 <li>
-                    <div id="icon">
-                        <div id="hamburger"></div>
-                    </div>
+                    <!--<i class="fab fa-autoprefixer fa-3x"></i>--><span id="logo-text">HOMMET</span><br /><span
+                        id="logo-aide">Real Estate Services</span>
                 </li>
-                <li><i class="fas fa-phone"></i></li>
-                <li><i class="fas fa-envelope-square"></i></li>
             </ul>
-        </div>
-        <div id="header-container">
-            <nav id="left-side">
-                <ul>
-                    <li>
-                        <!--<i class="fab fa-autoprefixer fa-3x"></i>--><span id="logo-text">HOMMET</span><br /><span id="logo-aide">Real Estate Services</span>
-                    </li>
-                </ul>
-            </nav>
-            <nav id="right-side">
-                <ul id="top-nav">
-                    <li class="top-main" id="social-media">
-                        <ul>
-                            <li><i class="fab fa-facebook"></i></li>
-                            <li><i class="fab fa-twitter"></i></li>
-                            <li><i class="fab fa-youtube"></i></li>
-                            <li><i class="fab fa-linkedin"></i></li>
-                            <li><i class="fab fa-pinterest"></i></li>
-                            <li><i class="fab fa-instagram"></i></li>
-                        </ul>
-                    </li>
-                    <li class="top-main"><i class="fas fa-phone"></i> 123.456.7890</li>
-                    <li class="top-main"><i class="fas fa-envelope-square"></i> agent@hommet.com</li>
-                </ul>
-                <ul id="bottom-nav">
-                    <li class="main-categories">
-                        <span class="main-categories-text">HOME</span>
-                    </li>
-                    <li class="main-categories">
-                        <span class="main-categories-text">PROPERTIES</span>
-                    </li>
-                    <li class="main-categories">
-                        <i class="caret fas fa-chevron-down fa-1x"></i>
-                        <span class="main-categories-text">COMMUNITIES</span>
-                    </li>
-                    <li class="main-categories">
-                        <i class="caret fas fa-chevron-down fa-1x"></i>
-                        <span class="main-categories-text">BUYERS</span>
-                    </li>
-                    <li class="main-categories">
-                        <span class="main-categories-text">SELLERS</span>
+        </nav>
+        <nav id="right-side">
+            <ul id="top-nav">
+                <li class="top-main" id="social-media">
+                    <ul>
+                        <li><i class="fab fa-facebook"></i></li>
+                        <li><i class="fab fa-twitter"></i></li>
+                        <li><i class="fab fa-youtube"></i></li>
+                        <li><i class="fab fa-linkedin"></i></li>
+                        <li><i class="fab fa-pinterest"></i></li>
+                        <li><i class="fab fa-instagram"></i></li>
+                    </ul>
+                </li>
+                <li class="top-main"><i class="fas fa-phone"></i> 123.456.7890</li>
+                <li class="top-main"><i class="fas fa-envelope-square"></i> agent@hommet.com</li>
+            </ul>
+            <ul id="bottom-nav">
+                <li class="main-categories">
+                    <span class="main-categories-text">HOME</span>
+                </li>
+                <li class="main-categories">
+                    <span class="main-categories-text">PROPERTIES</span>
+                </li>
+                <li class="main-categories">
+                    <i class="caret fas fa-chevron-down fa-1x"></i>
+                    <span class="main-categories-text">COMMUNITIES</span>
+                </li>
+                <li class="main-categories">
+                    <i class="caret fas fa-chevron-down fa-1x"></i>
+                    <span class="main-categories-text">BUYERS</span>
+                </li>
+                <li class="main-categories">
+                    <span class="main-categories-text">SELLERS</span>
 
-                    </li>
-                    <li class="main-categories">
-                        <span class="main-categories-text">ABOUT</span>
-                    </li>
-                    <li class="main-categories">
-                        <span class="main-categories-text">CONTACT</span>
-                    </li>
-                </ul>
-            </nav>
+                </li>
+                <li class="main-categories">
+                    <span class="main-categories-text">ABOUT</span>
+                </li>
+                <li class="main-categories">
+                    <span class="main-categories-text">CONTACT</span>
+                </li>
+            </ul>
+        </nav>
 
-        </div>
-    </header>
+    </div>
+</header>
 <div id="hero">
 
     <div class="hero-background-image"></div>
@@ -91,27 +92,55 @@
 </div>
 
 <div id="search">
-    <div id="search-wrap">
+    <form id="search-wrap" action="/search" method="POST">
+        {{ csrf_field() }}
         <i class="fas fa-search"></i>
-        <select>
-            <option value="" disabled selected hidden>Property Type</option>
+        <input name="search" placeholder="Type a city, neighborhood, zip, address, or listing #">
+        <select name="bedrooms">
+            <option value="" disabled selected>Bedrooms</option>
+            <option type="text" value="1">1 or more</option>
+            <option type="text" value="2">2 or more</option>
+            <option type="text" value="3">3 or more</option>
+            <option type="text" value="4">4 or more</option>
+            <option type="text" value="5">5 or more</option>
+            <option type="text" value="6">6 or more</option>
         </select>
-        <input value="" placeholder="City or ZIP">
-        <select>
-            <option value="" disabled selected hidden>Bedrooms</option>
+        <select name="bathrooms">
+            <option value="" disabled selected>Bathrooms</option>
+            <option type="text" value="1">1 or more</option>
+            <option type="text" value="2">2 or more</option>
+            <option type="text" value="3">3 or more</option>
+            <option type="text" value="4">4 or more</option>
         </select>
-        <select>
-            <option value="" disabled selected hidden>Bathrooms</option>
+        <select name="min">
+            <option value="" disabled selected>Min Price</option>
+            <option type="text" value="100000">$100,000</option>
+            <option type="text" value="200000">$200,000</option>
+            <option type="text" value="300000">$300,000</option>
+            <option type="text" value="400000">$400,000</option>
+            <option type="text" value="500000">$500,000</option>
+            <option type="text" value="600000">$600,000</option>
+            <option type="text" value="700000">$700,000</option>
+            <option type="text" value="800000">$800,000</option>
+            <option type="text" value="900000">$900,000</option>
+            <option type="text" value="1000000">$1,000,000</option>
         </select>
-        <select>
-            <option value="" disabled selected hidden>Min Price</option>
-        </select>
-        <select>
-            <option value="" disabled selected hidden>Max Price</option>
+        <select name="max">
+            <option value="" disabled selected>Max Price</option>
+            <option type="text" value="100000">$100,000</option>
+            <option type="text" value="200000">$200,000</option>
+            <option type="text" value="300000">$300,000</option>
+            <option type="text" value="400000">$400,000</option>
+            <option type="text" value="500000">$500,000</option>
+            <option type="text" value="600000">$600,000</option>
+            <option type="text" value="700000">$700,000</option>
+            <option type="text" value="800000">$800,000</option>
+            <option type="text" value="900000">$900,000</option>
+            <option type="text" value="1000000">$1,000,000</option>
         </select>
         <button>SEARCH</button>
         <p>Advanced Search</p>
-    </div>
+    </form>
 </div>
 
 <div id="introduction">
@@ -148,29 +177,32 @@
         <h2>Featured Listings</h2>
     </div>
     <div id="featured-wrap">
+        @foreach($featuredProperties as $featuredProperty)
+        <a href="/properties/{{ $featuredProperty->id }}">
         <div class="feature">
             <div class="feature-sec">
                 <div class="feature-sec-helper">
-                    <p>$500,000</p>
+                    <p>${{ number_format($featuredProperty->price) }}</p>
                 </div>
             </div>
             <div class="feature-sec">
-                <p class="address">8341 Red Fox Way</p>
-                <p class="city-state">Elk Grove, CA 95758</p>
+                <p class="address">{{ $featuredProperty->street_address }}</p>
+                <p class="city-state">{{ $featuredProperty->city}}, {{ $featuredProperty->zip }}</p>
                 <p class="details">
                     <span class="details-sec">
                         <i class="fas fa-bed"></i>
-                        <span class="bed-detail">12 BD</span>
+                        <span class="bed-detail">{{ $featuredProperty->bedrooms }} BR</span>
                     </span>
                     <span class="details-sec">
                         <i class="fas fa-bath"></i>
-                        <span class="bath-detail">12 BA</span>
+                        <span class="bath-detail">{{ $featuredProperty->bathrooms }} BA</span>
                     </span>
                 </p>
             </div>
         </div>
-
-        <div class="feature">
+    </a>
+        @endforeach
+        {{-- <div class="feature">
             <div class="feature-sec">
                 <div class="feature-sec-helper">
                     <p>$500,000</p>
@@ -234,7 +266,7 @@
                     </span>
                 </p>
             </div>
-        </div>
+        </div> --}}
     </div>
 </div>
 
@@ -250,8 +282,8 @@
     <div id="communities-text">
         <h2>Featured Communities</h2>
     </div>
-    <div id="communities-wrap">
-        <div class="community">
+    <form id="communities-wrap" action="/community" method="POST">
+        {{-- <div class="community">
             <div class="community-helper">Elk Grove</div>
         </div>
         <div class="community">
@@ -262,8 +294,16 @@
         </div>
         <div class="community">
             <div class="community-helper">Citrus Heights</div>
-        </div>
-    </div>
+        </div> --}}
+        @foreach ($featuredCommunities as $featuredCommunity)
+        <a href="/community/{{ $featuredCommunity->id }}">
+            <div class="community">
+                <div class="community-helper">{{ $featuredCommunity->name }}</div>
+
+            </div>
+        </a>
+        @endforeach
+    </form>
 </div>
 
 <div id="testimonials">

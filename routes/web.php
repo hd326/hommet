@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'PagesController@home');
+Route::post('/search', 'PagesController@search');
+Route::get('/communities/{community}', 'PagesController@community');
+Route::get('/properties/{property}', 'PagesController@property');

@@ -1,0 +1,68 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Property;
+use App\Community;
+
+class PagesController extends Controller
+{
+    public function home()
+    {
+        $featuredProperties = Property::where('featured', '=', 1)->get();
+        $featuredCommunities = Community::where('featured', '=', 1)->get();
+        return view('pages.home', compact('featuredCommunities', 'featuredProperties'));
+    }
+
+    public function community(Request $request, $id)
+    {
+        $community = Community::find($id);
+        $properties = $community->properties()->get();
+        return view('pages.community', compact('properties'));
+    }
+
+    public function property($id){
+        $property = Property::find($id);
+        return view('pages.property', compact('property'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $bedrooms = $request->input('bedrooms');
+        $bathrooms = $request->input('bathrooms');
+        $min = $request->input('min');
+        $max = $request->input('max');
+
+        $properties = Property::query();
+
+        if (!empty($search)){
+            $properties = $properties->where('city', 'like', '%'. $search . '%')
+                ->orWhere('neighborhood', 'like', '%'. $search . '%')
+                ->orWhere('zip', 'like', '%'. $search . '%')
+                ->orWhere('street_address', 'like', '%'. $search . '%')
+                ->orWhere('listing_number', 'like', '%'. $search . '%');
+        }
+
+        if (!empty($bedrooms)){
+            $properties = $properties->where('bedrooms', '>=', $bedrooms);
+        }
+
+        if (!empty($bathrooms)) {
+            $properties = $properties->where('bathrooms', '>=', $bathrooms);
+        }
+
+        if(!empty($min)) {
+            $properties = $properties->where('price', '>=', $min);
+        }
+
+        if(!empty($max)) {
+            $properties = $properties->where('price', '<=', $max);
+        }
+
+        $properties = $properties->get();
+
+        return view('pages.search', compact('properties'));
+    }
+}
