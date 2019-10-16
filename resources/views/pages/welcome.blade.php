@@ -3,72 +3,7 @@
 @section('title', '| Home Page')
 
 @section('content')
-<header>
-    <div id="header-mobile">
-        <ul>
-            <li>
-                <div id="icon">
-                    <div id="hamburger"></div>
-                </div>
-            </li>
-            <li><i class="fas fa-phone"></i></li>
-            <li><i class="fas fa-envelope-square"></i></li>
-        </ul>
-    </div>
-    <div id="header-container">
-        <nav id="left-side">
-            <ul>
-                <li>
-                    <!--<i class="fab fa-autoprefixer fa-3x"></i>--><span id="logo-text">HOMMET</span><br /><span
-                        id="logo-aide">Real Estate Services</span>
-                </li>
-            </ul>
-        </nav>
-        <nav id="right-side">
-            <ul id="top-nav">
-                <li class="top-main" id="social-media">
-                    <ul>
-                        <li><i class="fab fa-facebook"></i></li>
-                        <li><i class="fab fa-twitter"></i></li>
-                        <li><i class="fab fa-youtube"></i></li>
-                        <li><i class="fab fa-linkedin"></i></li>
-                        <li><i class="fab fa-pinterest"></i></li>
-                        <li><i class="fab fa-instagram"></i></li>
-                    </ul>
-                </li>
-                <li class="top-main"><i class="fas fa-phone"></i> 123.456.7890</li>
-                <li class="top-main"><i class="fas fa-envelope-square"></i> agent@hommet.com</li>
-            </ul>
-            <ul id="bottom-nav">
-                <li class="main-categories">
-                    <span class="main-categories-text">HOME</span>
-                </li>
-                <li class="main-categories">
-                    <span class="main-categories-text">PROPERTIES</span>
-                </li>
-                <li class="main-categories">
-                    <i class="caret fas fa-chevron-down fa-1x"></i>
-                    <span class="main-categories-text">COMMUNITIES</span>
-                </li>
-                <li class="main-categories">
-                    <i class="caret fas fa-chevron-down fa-1x"></i>
-                    <span class="main-categories-text">BUYERS</span>
-                </li>
-                <li class="main-categories">
-                    <span class="main-categories-text">SELLERS</span>
 
-                </li>
-                <li class="main-categories">
-                    <span class="main-categories-text">ABOUT</span>
-                </li>
-                <li class="main-categories">
-                    <span class="main-categories-text">CONTACT</span>
-                </li>
-            </ul>
-        </nav>
-
-    </div>
-</header>
 <div id="hero">
 
     <div class="hero-background-image"></div>
@@ -311,9 +246,12 @@
         <h2>Testimonials</h2>
     </div>
     <div id="testimonial-container">
+        <!-- our testimonial container to hold everything together -->
         <div id="testimonial-arrow-left" class="testimonial-arrow"></div>
         <div id="testimonial-slider">
+            <!-- overflow hidden parent on our above parent -->
             <div id="testimonial-slider-container">
+                <!-- our child which is 500% to accomodate sliders -->
                 <div class="testimonial slide1" id="lastClone">
                     <div class="slide_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras efficitur
                         purus nec arcu sodales tristique. Maecenas dictum luctus faucibus. Donec non sapien efficitur,
@@ -409,40 +347,7 @@
     </div>
 </div>
 
-<footer>
-    <div id="footer-container">
-        <div class="footer-sec">
-            <h3><span id="logo-text">HOMMET</span></h3>
-            <span>REAL ESTATE SERVICES</span>
-        </div>
-        <div class="footer-sec">
-            {{-- <div class="footer-sec-row">
-                <ul>
-                    <li><i class="fab fa-facebook"></i></li>
-                    <li><i class="fab fa-twitter"></i></li>
-                    <li><i class="fab fa-youtube"></i></li>
-                    <li><i class="fab fa-linkedin"></i></li>
-                    <li><i class="fab fa-pinterest"></i></li>
-                    <li><i class="fab fa-instagram"></i></li>
-                </ul>
-            </div> --}}
-            <div class="footer-sec-row">
-                <ul>
-                    <li>HOME</li>
-                    <li>PROPERTIES</li>
-                    <li>COMMUNITIES</li>
-                    <li>BUYERS</li>
-                    <li>SELLERS</li>
-                    <li>ABOUT</li>
-                    <li>CONTACT</li>
-                </ul>
-            </div>
-            <div class="footer-sec-row">
-                &copy; 2019 HOMMET. All rights reserved. Real Estate Website Design by Richard Duong
-            </div>
-        </div>
-    </div>
-</footer>
+
 <script src="{{ asset('js/main.js') }}">
 </script>
 @endsection

@@ -612,7 +612,7 @@ header {
                 height: 35px;
                 border-right: 1px solid #fbfbfb;
 
-                
+
             }
 
             input {
@@ -695,12 +695,13 @@ header {
             .introduction-sec:nth-of-type(1) {
                 grid-row: 2;
                 background-position-y: 0px;
-                display:grid;
-                justify-self:center;
+                display: grid;
+                justify-self: center;
             }
 
             .introduction-sec:nth-of-type(2) {
                 grid-row: 1;
+
                 h2 {
                     text-align: center;
                 }
@@ -713,9 +714,7 @@ header {
     #introduction {
 
         #introduction-wrap {
-            .introduction-sec:nth-of-type(1) {
-
-            }
+            .introduction-sec:nth-of-type(1) {}
         }
     }
 }
@@ -1481,44 +1480,49 @@ footer {
 
         .footer-sec {
             &:nth-of-type(1) {
-                h3 span#logo-text{
+                h3 span#logo-text {
                     font-family: "Crimson Text";
                     color: $gold;
                 }
             }
 
             &:nth-of-type(2) {
-                
+
                 .footer-sec-row {
                     width: 100%;
+
                     &:nth-of-type(1) {
-                        display:grid;
+                        display: grid;
                         justify-content: flex-end;
+
                         ul {
-                        
+
                             li {
                                 display: inline-block;
                                 margin-left: 10px;
                                 font-size: 12px;
-                                &:after{
+
+                                &:after {
                                     content: '|';
-                                    position:absolute;
+                                    position: absolute;
                                     width: 1px;
                                     color: #f2f2f2;
-                                    margin:auto;
+                                    margin: auto;
                                     margin-left: 5px;
                                     margin-top: -2px;
                                 }
-                                &:nth-of-type(7){
-                                    &:after{
+
+                                &:nth-of-type(7) {
+                                    &:after {
                                         content: '';
                                     }
                                 }
                             }
                         }
                     }
-                    &:nth-of-type(2){
-                        display:grid;
+
+                    &:nth-of-type(2) {
+                        display: grid;
                         justify-content: flex-end;
                         font-size: 12px;
 
@@ -1529,20 +1533,140 @@ footer {
     }
 }
 
-@include mQ(1199px){
-    footer{
-        #footer-container{
+@include mQ(1199px) {
+    footer {
+        #footer-container {
             grid-template-columns: .7fr 1.3fr;
         }
     }
 }
 
-@include mQ(991px){
-    footer{
+@include mQ(991px) {
+    footer {
         text-align: center;
-        #footer-container{
+
+        #footer-container {
             grid-template-columns: 1fr
         }
     }
 }
 
+// BEGIN PROPERTY PAGE
+// BEGIN PROPERTY PAGE
+// BEGIN PROPERTY PAGE
+// BEGIN PROPERTY PAGE
+// BEGIN PROPERTY PAGE
+
+#show-property-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    z-index: 1;
+
+    #show-property-hero-background-text {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        width: 70%;
+        margin: auto;
+        height: 100%;
+        z-index: 2;
+        text-align: center;
+
+        h2 {
+
+            color: white;
+            font-size: 3rem;
+        }
+    }
+
+    #show-property-hero-background-image-helper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .show-property-hero-background-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/2.jpg');
+    }
+}
+
+#show-property-slider-container-main {
+    width: 80%;
+    margin: auto;
+    position: relative;
+}
+
+#show-property-slider-container-main #show-property-slider {
+    overflow: hidden;
+}
+
+#show-property-slider-container-main #show-property-slider #show-property-slider-container {
+    width: 500%;
+}
+
+#show-property-slider-container-main #show-property-slider #show-property-slider-container .properties {
+    width: 20%;
+    float: left;
+    text-align: center;
+    padding: 0px 150px;
+    font-size: 1em;
+}
+
+#show-property-slider-container-main #show-property-slider .properties {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#show-property-slider-container-main #show-property-slider .properties .properties-content a img {
+    width: 100%;
+    height: 95px;
+}
+
+#show-property-slider-container-main #show-property-slider .properties .properties-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.show-property-arrow {
+    position: absolute;
+    border-top: 2px solid #f4f4f4;
+    border-right: 2px solid #f4f4f4;
+    width: 30px;
+    height: 30px;
+    z-index: 5;
+    color: white;
+    cursor: pointer;
+}
+
+#show-property-arrow-left {
+    -webkit-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+    left: 0;
+    right: 0;
+    top: 55%;
+    margin: auto;
+    margin-left: 50px;
+}
+
+#show-property-arrow-right {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    left: 0;
+    right: 0;
+    top: 55%;
+    margin: auto;
+    margin-right: 50px;
+}
