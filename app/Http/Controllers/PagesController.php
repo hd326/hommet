@@ -8,23 +8,11 @@ use App\Community;
 
 class PagesController extends Controller
 {
-    public function home()
+    public function welcome()
     {
         $featuredProperties = Property::where('featured', '=', 1)->get();
         $featuredCommunities = Community::where('featured', '=', 1)->get();
-        return view('pages.home', compact('featuredCommunities', 'featuredProperties'));
-    }
-
-    public function community(Request $request, $id)
-    {
-        $community = Community::find($id);
-        $properties = $community->properties()->get();
-        return view('pages.community', compact('properties'));
-    }
-
-    public function property($id){
-        $property = Property::find($id);
-        return view('pages.property', compact('property'));
+        return view('pages.welcome', compact('featuredCommunities', 'featuredProperties'));
     }
 
     public function search(Request $request)

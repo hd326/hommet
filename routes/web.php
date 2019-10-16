@@ -11,7 +11,12 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'PagesController@welcome');
 Route::post('/search', 'PagesController@search');
-Route::get('/communities/{community}', 'PagesController@community');
-Route::get('/properties/{property}', 'PagesController@property');
+
+Route::get('/communities/{community}', 'CommunityController@show');
+// index is for showing all communities, we are actually displaying a community properties for show --
+
+Route::get('/properties/{property}', 'PropertyController@show');
+// here we are showing individual properties, not all of them
+
