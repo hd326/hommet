@@ -22,6 +22,7 @@ class CreatePropertiesTable extends Migration
             $table->float('price');
             $table->float('bedrooms');
             $table->float('bathrooms');
+            $table->integer('square_feet');
             $table->integer('lot_size');
             $table->integer('year_built');
             $table->string('type');
@@ -35,6 +36,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('garage');
             $table->integer('parking_space');
             $table->string('utilities');
+            $table->text('details');
             $table->integer('agent_id');
             $table->boolean('featured')->nullable();
             $table->timestamps();

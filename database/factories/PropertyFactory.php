@@ -14,6 +14,7 @@ $factory->define(App\Property::class, function (Faker $faker) {
         'price' => round(rand(100000, 1000000)),
         'bedrooms' => rand(1, 3),
         'bathrooms' => rand(1, 3),
+        'square_feet' => rand(3000, 5000),
         'lot_size' => rand(1000, 2500),
         'year_built' => rand(2010, 2019),
         'type' => 'Single Family Home',
@@ -27,6 +28,7 @@ $factory->define(App\Property::class, function (Faker $faker) {
         'garage' => rand(2,4),
         'parking_space' => rand(3,6),
         'utilities' => 'Cable Available, Electricity Available, Phone Available, Sewer Available, Water Available',
+        'details' => $faker->text($maxNbChars = 400),
         'agent_id' => rand(1,12)
     ];
 });

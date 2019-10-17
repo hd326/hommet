@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
-    public function agents()
+    public function agent()
     {
         return $this->belongsTo(Agent::class);
     }
