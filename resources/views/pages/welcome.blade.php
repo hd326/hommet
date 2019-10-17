@@ -231,7 +231,7 @@
             <div class="community-helper">Citrus Heights</div>
         </div> --}}
         @foreach ($featuredCommunities as $featuredCommunity)
-        <a href="/community/{{ $featuredCommunity->id }}">
+        <a href="/communities/{{ $featuredCommunity->id }}">
             <div class="community">
                 <div class="community-helper">{{ $featuredCommunity->name }}</div>
 
