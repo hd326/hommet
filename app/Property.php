@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Property extends Model
 {
+    protected $appends = ['isFavorited'];
+
     public function agent()
     {
         return $this->belongsTo(Agent::class);
@@ -14,5 +16,16 @@ class Property extends Model
     public function community()
     {
         return $this->belongsTo(Community::class, 'city');
+    }
+
+    public function favorites()
+    {
+        return $this->morphMany(Favorite::class, 'favorited');
+    }
+
+    public function getIsFavoritedAttribute()
+    {
+        return !! $this->favorites->where('user_id', auth()->id())->count();
+        // is the property favorited
     }
 }

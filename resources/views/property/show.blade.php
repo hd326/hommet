@@ -15,7 +15,24 @@
             <strong>Success</strong> {{ session()->get('message') }}
         </div>
         @endif
-        <p id="street-address">{{ $property->street_address }}, {{ $property->city }}, {{ $property->zip }}</p>
+        <div id="street-address-favorite">
+            <p id="street-address">{{ $property->street_address }}, {{ $property->city }}, {{ $property->zip }}</p>
+
+            @if($property->isFavorited)
+            <form action="/properties/{{ $property->id }}/favorite" method="POST">
+                @csrf
+                {{ method_field('delete') }}
+                <button type="submit"><i class="fas fa-star fa-2x"></i></button>
+            </form>
+            @elseif(!$property->isFavorited)
+            <form action="/properties/{{ $property->id }}/favorite" method="POST">
+                @csrf
+                <button type="submit"><i class="far fa-star fa-2x"></i></button>
+            </form>
+            @endif
+            
+            
+        </div>
         <img id="property-main-picture" src="../images/1.jpg">
 
         <div id="property-slider-container-main">
@@ -74,15 +91,19 @@
         </div>
 
         <div id="properties-details">
-            <div class="property-heading-showing">
-                <h2><span>Property Details</span><span>
-                        <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-primary custom-btn" data-toggle="modal"
-                            data-target="#exampleModal">
-                            REQUEST SHOWING
-                        </button>
+            <div id="property-heading-showing">
+                <h2>Property Details</h2>
+                <h2>
+                    <!-- Button trigger modal -->
 
-                        <!-- Modal -->
+                    <button type="button" class="btn btn-primary custom-btn" data-toggle="modal"
+                        data-target="#exampleModal">
+                        REQUEST SHOWING
+                    </button>
+
+                    <!-- Modal -->
+                    <form action="/properties/{property}/schedule-contact" method="POST">
+                        @csrf
                         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -93,31 +114,37 @@
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
-            
+
                                     <div class="modal-body">
-                                        Re: {{ $property->street_address }}
-                                        <form><br>
-                                            <label for="name">Your Name*:</label>
-                                            <input name="name" class="form-control"><br>
-                                            <label for="phone">Your Phone Number*:</label>
-                                            <input name="phone_number" class="form-control"><br>
-                                            <label for="email">Your Email*:</label>
-                                            <input name="email_address" class="form-control"><br>
-                                            <label for="best-time">When is the best time to contact you?</label>
-                                            <input name="best_time_to_contact" class="form-control"><br>
-                                            <label for="comments-questions">Comments/Questions - When would you like to see this property?</label>
-                                            <textarea class="form-control col="50" row="5"></textarea>
-                                        </form>
+                                        Re: {{ $property->street_address }}, {{ $property->city }},
+                                        {{ $property->zip }}<br /><br />
+
+                                        <input type="hidden" name="agent_email" value="{{ $agent->email_address }}">
+                                        <label for="name">Your Name*:</label>
+                                        <input name="name" class="form-control"><br>
+                                        <label for="phone">Your Phone Number*:</label>
+                                        <input name="phone_number" class="form-control"><br>
+                                        <label for="email">Your Email*:</label>
+                                        <input name="email_address" class="form-control"><br>
+                                        <label for="best-time">When is the best time to contact you?*</label>
+                                        <input name="best_time_to_contact" class="form-control"><br>
+                                        <label for="comments-questions">Comments/Questions - When would you like to see
+                                            this property?</label>
+                                        <textarea name="comments_questions" class="form-control col=" 50"
+                                            row="5"></textarea>
+
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"
                                             data-dismiss="modal">CANCEL</button>
-                                        <button type="button" class="btn btn-primary">REQUEST</button>
+                                        <button type="submit" class="btn btn-primary">REQUEST</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </span></h2>
+
+                </h2>
+                </form>
             </div>
             <h3>Description</h3>
             <p id="property-details">
@@ -152,14 +179,14 @@
     <div id="property-side">
         <div id="property-search-box">
             <h2>Contact Agent</h2>
-            <form action="/properties/{property}" method="POST">
+            <form action="/properties/{property}/agent-contact" method="POST">
                 @csrf
                 <input name="agent_email" type="hidden" value="{{ $agent->email_address }}">
                 <input name="name" placeholder="Name" value={{ old('name')}}>
                 {{ $errors->first('name') }}
-                <input name="phone" placeholder="Phone" value={{ old('phone')}}>
+                <input name="phone_number" placeholder="Phone" value={{ old('phone')}}>
                 {{ $errors->first('phone') }}
-                <input name="email" placeholder="Email" value={{ old('email')}}>
+                <input name="email_address" placeholder="Email" value={{ old('email')}}>
                 {{ $errors->first('email') }}
                 <textarea name="message" rows="5">I would like to learn more about this listing.</textarea>
                 {{ $errors->first('message') }}

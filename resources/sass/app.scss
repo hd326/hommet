@@ -14,6 +14,16 @@
     }
 }
 
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+
 $gold: rgb(194, 165, 0);
 $offgold: #a88e00;
 .btn-primary{
@@ -29,7 +39,7 @@ $offgold: #a88e00;
 }
 .btn-primary:focus,
 .btn-primary.focus{
-    box-shadow:0 0 0 .2rem rgba(0,90,90,0.5)
+    box-shadow:0 0 0 .1rem $gold;
 }
 
 * {
@@ -832,6 +842,7 @@ header {
     margin-top: 50px;
     text-align: center;
     height: 100%;
+    width: 100%;
     position: relative;
 
     #featured-text {
@@ -864,6 +875,7 @@ header {
             display: grid;
             grid-template-rows: 1fr 1fr;
             width: 100%;
+            height: 100%;
             position: relative;
 
             .feature-sec:nth-of-type(1) {
@@ -1613,6 +1625,20 @@ footer {
     max-width: 1200px;
     margin: auto;
     grid-template-columns: .75fr .25fr;
+    #street-address-favorite{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        form{
+            display:grid;
+            justify-content:flex-end;
+            align-content: center;
+            margin-top: 5px;
+            button{
+                background-color: transparent;
+                border: none;
+            }
+        }
+    }
 }
 
 #property-main-picture-container {
@@ -1726,6 +1752,34 @@ footer {
         }
     }
 
+    #property-heading-showing{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            border-bottom: 1px solid rgb(190, 190, 190);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1;
+            margin-top: 20px;
+        }
+        h2{
+            display: grid;
+            &:nth-of-type(1){
+                
+                
+            }
+            &:nth-of-type(2){
+                justify-content: flex-end;
+                margin-top: 20px;
+                text-transform:none;
+            }
+        }
+    }
+
     h2 {
         font-size: 1em;
         text-transform: uppercase;
@@ -1735,6 +1789,7 @@ footer {
         position: relative;
         span:nth-of-type(2){
             text-transform: none;
+            
         }
         //&:before {
         //    content: '';
@@ -1746,17 +1801,7 @@ footer {
         //    left: 0;
         //    display: block;
         //}
-        &:after {
-            content: '';
-            position: relative;
-            border-bottom: 1px solid rgb(190, 190, 190);
-            bottom: 0;
-            left: 0;
-            z-index: 1;
-            display: block;
-            margin-top: 20px;
-        }
-        
+
     }
 
     h3 {
