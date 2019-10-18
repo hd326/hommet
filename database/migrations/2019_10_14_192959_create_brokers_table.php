@@ -18,6 +18,7 @@ class CreateBrokersTable extends Migration
             $table->string('name');
             $table->string('phone_number');
             $table->string('email_address');
+            $table->string('street_address');
             $table->timestamps();
         });
     }

@@ -5,10 +5,10 @@
 use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(App\Broker::class, function (Faker $faker) {
     return [
         'name' => $faker->word(2),
-        'email' => 'r_duong89@yahoo.com',
+        'email_address' => 'r_duong89@yahoo.com',
         'phone_number' => $faker->phoneNumber,
         'street_address' => $faker->streetAddress,
     ];

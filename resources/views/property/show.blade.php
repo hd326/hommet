@@ -10,7 +10,11 @@
 
 <div id="property-container">
     <div id="property-main">
-
+        @if(session()->has('message'))
+        <div class="alert alert-success" role="alert">
+            <strong>Success</strong> {{ session()->get('message') }}
+        </div>
+        @endif
         <p id="street-address">{{ $property->street_address }}, {{ $property->city }}, {{ $property->zip }}</p>
         <img id="property-main-picture" src="../images/1.jpg">
 
@@ -69,25 +73,70 @@
             <div id="property-arrow-right" class="property-arrow"></div>
         </div>
 
-        <div id="property-details">
-            <h2>Property Details</h2>
+        <div id="properties-details">
+            <div class="property-heading-showing">
+                <h2><span>Property Details</span><span>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary custom-btn" data-toggle="modal"
+                            data-target="#exampleModal">
+                            REQUEST SHOWING
+                        </button>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Schedule a Showing</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+            
+                                    <div class="modal-body">
+                                        Re: {{ $property->street_address }}
+                                        <form><br>
+                                            <label for="name">Your Name*:</label>
+                                            <input name="name" class="form-control"><br>
+                                            <label for="phone">Your Phone Number*:</label>
+                                            <input name="phone_number" class="form-control"><br>
+                                            <label for="email">Your Email*:</label>
+                                            <input name="email_address" class="form-control"><br>
+                                            <label for="best-time">When is the best time to contact you?</label>
+                                            <input name="best_time_to_contact" class="form-control"><br>
+                                            <label for="comments-questions">Comments/Questions - When would you like to see this property?</label>
+                                            <textarea class="form-control col="50" row="5"></textarea>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">CANCEL</button>
+                                        <button type="button" class="btn btn-primary">REQUEST</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </span></h2>
+            </div>
             <h3>Description</h3>
             <p id="property-details">
                 {{ $property->details }}
             </p>
-            <div id="open-house">
 
-            </div>
             <h3>Property Features</h3>
             <div class="details">
                 <div class="details-sec">
-                    <p><b>Square Feet:</b> {{ $property->square_feet }}</p>
-                    <p><b>Lot Size:</b> {{ $property->lot_size }}</p>
+                    <p><b>Square Feet:</b> {{ number_format($property->square_feet) }}</p>
+                    <p><b>Lot Size:</b> {{ number_format($property->lot_size) }}</p>
                     <p><b>Year Built:</b> {{ $property->year_built }}</p>
                     <p><b>Type:</b> {{ $property->type }}</p>
                     <p><b>Sub Type:</b> {{ $property->sub_type }}</p>
                     <p><b>Listing Status:</b> {{ $property->listing_status }}</p>
                     <p><b>Listing #:</b> {{ $property->listing_number }}</p>
+
+                </div>
+                <div class="details-sec">
                     <p><b>County:</b> {{ $property->county }}</p>
                     <p><b>Neighborhood:</b> {{ $property->neighborhood }}</p>
                     <p><b>Fire Place:</b> {{ $property->fireplace }}</p>
@@ -96,9 +145,6 @@
                     <p><b>Parking Space:</b> {{ $property->parking_space }}</p>
                     <p><b>Utilities:</b> {{ $property->utilities }}</p>
                 </div>
-                <div class="details-sec">
-
-                </div>
             </div>
         </div>
     </div>
@@ -106,20 +152,31 @@
     <div id="property-side">
         <div id="property-search-box">
             <h2>Contact Agent</h2>
-            <form>
-                <input name="name" placeholder="Name">
-                <input name="phone" placeholder="Phone">
-                <input name="email" placeholder="Email">
+            <form action="/properties/{property}" method="POST">
+                @csrf
+                <input name="agent_email" type="hidden" value="{{ $agent->email_address }}">
+                <input name="name" placeholder="Name" value={{ old('name')}}>
+                {{ $errors->first('name') }}
+                <input name="phone" placeholder="Phone" value={{ old('phone')}}>
+                {{ $errors->first('phone') }}
+                <input name="email" placeholder="Email" value={{ old('email')}}>
+                {{ $errors->first('email') }}
+                <textarea name="message" rows="5">I would like to learn more about this listing.</textarea>
+                {{ $errors->first('message') }}
+                <button type="submit">Contact Agent</button>
+
             </form>
         </div>
         <div id="property-side-image">
-                <img src="../images/woman.jpg">
-                <div id="property-side-agent-detail">
+            <img src="../images/woman.jpg">
+            <div id="property-side-agent-detail">
                 {{ $property->agent->phone_number }}<br>
-                {{ $property->agent->email }}
+                {{ $property->agent->email_address }}<br>
+                {{ ucfirst($property->agent->broker->name) }} Group
+
             </div>
         </div>
-        
+
     </div>
 </div>
 
