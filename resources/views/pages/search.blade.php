@@ -8,7 +8,7 @@
 </head>
 <body>
     @foreach ($properties as $property)
-        {{ $property->id }}
+    <a href="/properties/{{ $property->id }}">{{ $property->id }}</a>
         <br/>
     @endforeach
 </body>

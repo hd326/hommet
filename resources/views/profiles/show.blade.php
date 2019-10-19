@@ -8,7 +8,7 @@
 </head>
 <body>
     @foreach ($user->favorites as $favorite)
-        {{ $favorite->id }}
+        <a href="/properties/{{ $favorite->id }}">{{ $favorite->id }}</a>
     @endforeach
 </body>
 </html>

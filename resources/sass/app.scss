@@ -15,13 +15,13 @@
 }
 
 // Fonts
-//@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
-//@import 'variables';
+@import 'variables';
 
 // Bootstrap
-//@import '~bootstrap/scss/bootstrap';
+@import '~bootstrap/scss/bootstrap';
 
 
 $gold: rgb(194, 165, 0);
@@ -40,6 +40,10 @@ $offgold: #a88e00;
 .btn-primary:focus,
 .btn-primary.focus{
     box-shadow:0 0 0 .1rem $gold;
+}
+
+.header-fix{
+    padding-top: 150px;
 }
 
 * {
@@ -556,6 +560,7 @@ header {
 
 #search {
     background-color: #2b2b2b;
+    color: #f2f2f2;
 
     #search-wrap {
         display: grid;
@@ -580,6 +585,7 @@ header {
         border: 1px solid #fbfbfb;
         border-right: none;
         background-color: #2b2b2b;
+        color: #f2f2f2;
     }
 
     input::placeholder {
@@ -591,7 +597,9 @@ header {
         border-right: none;
         background-color: #2b2b2b;
         color: #fbfbfb;
-
+        option{
+            color: #f2f2f2;
+        }
         &:nth-of-type(4) {
             border-right: 1px solid #fbfbfb;
         }

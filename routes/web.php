@@ -17,6 +17,7 @@ Route::post('/search', 'PageController@search');
 Route::get('/communities/{community}', 'CommunityController@show');
 // index is for showing all communities, we are actually displaying a community properties for show --
 
+Route::get('/properties/', 'PropertyController@index');
 Route::get('/properties/{property}', 'PropertyController@show');
 // here we are showing individual properties, not all of them
 Route::post('/properties/{property}/agent-contact', 'PropertyController@agentContact');

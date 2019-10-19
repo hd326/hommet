@@ -11,6 +11,6 @@ class Property extends Seeder
      */
     public function run()
     {
-        factory(App\Property::class, 20)->create();
+        factory(App\Property::class, 50)->create();
     }
 }
