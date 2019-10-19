@@ -37,5 +37,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    
+    public function favorites()
+    {
+        return $this->belongsToMany(Property::class, 'favorites', 'user_id', 'favorited_id');
+    }
 }

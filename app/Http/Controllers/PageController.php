@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Property;
 use App\Community;
 
-class PagesController extends Controller
+class PageController extends Controller
 {
     public function welcome()
     {

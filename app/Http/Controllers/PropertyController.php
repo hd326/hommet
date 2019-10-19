@@ -14,12 +14,9 @@ class PropertyController extends Controller
 {
     public function show($id)
     {
+        $user = auth()->user();
         $property = Property::find($id);
-        $agent = $property->agent;
-        // needed to email agent
-        $broker = $property->agent->broker->name;
-        // needed for broker information name
-        return view('property.show', compact('property', 'agent'));
+        return view('property.show', compact('property', 'user'));
     }
 
     public function agentContact(Request $request)

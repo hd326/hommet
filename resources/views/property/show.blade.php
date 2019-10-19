@@ -18,6 +18,7 @@
         <div id="street-address-favorite">
             <p id="street-address">{{ $property->street_address }}, {{ $property->city }}, {{ $property->zip }}</p>
 
+            @if(Auth::check())
             @if($property->isFavorited)
             <form action="/properties/{{ $property->id }}/favorite" method="POST">
                 @csrf
@@ -30,8 +31,8 @@
                 <button type="submit"><i class="far fa-star fa-2x"></i></button>
             </form>
             @endif
-            
-            
+            @endif
+
         </div>
         <img id="property-main-picture" src="../images/1.jpg">
 
@@ -119,7 +120,8 @@
                                         Re: {{ $property->street_address }}, {{ $property->city }},
                                         {{ $property->zip }}<br /><br />
 
-                                        <input type="hidden" name="agent_email" value="{{ $agent->email_address }}">
+                                        <input type="hidden" name="agent_email"
+                                            value="{{ $property->agent->email_address }}">
                                         <label for="name">Your Name*:</label>
                                         <input name="name" class="form-control"><br>
                                         <label for="phone">Your Phone Number*:</label>
@@ -181,7 +183,7 @@
             <h2>Contact Agent</h2>
             <form action="/properties/{property}/agent-contact" method="POST">
                 @csrf
-                <input name="agent_email" type="hidden" value="{{ $agent->email_address }}">
+                <input name="agent_email" type="hidden" value="{{ $property->agent->email_address }}">
                 <input name="name" placeholder="Name" value={{ old('name')}}>
                 {{ $errors->first('name') }}
                 <input name="phone_number" placeholder="Phone" value={{ old('phone')}}>
