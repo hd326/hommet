@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Property extends Model
 {
     protected $appends = ['isFavorited'];
+    protected $guarded = [];
 
     public function agent()
     {
@@ -25,7 +26,7 @@ class Property extends Model
 
     public function getIsFavoritedAttribute()
     {
-        return !! $this->favorites->where('user_id', auth()->id())->count();
+        return !! $this->favorites()->where('user_id', auth()->id())->count();
         // is the property favorited
     }
 }

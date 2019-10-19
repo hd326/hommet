@@ -37,8 +37,12 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = ['isFavorited'];
+
     public function favorites()
     {
         return $this->belongsToMany(Property::class, 'favorites', 'user_id', 'favorited_id');
+        // eloquent will assume property_user, but we override with favorites on our user_id and it's property_id
+        // User may have many Properties on Favorites on User_id to Property_id
     }
 }

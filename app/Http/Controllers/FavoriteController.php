@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Property;
 use App\Favorite;
+use App\Http\Controllers\Auth;
 
 class FavoriteController extends Controller
 {
@@ -19,14 +20,14 @@ class FavoriteController extends Controller
         if ( ! $property->favorites()->where(['user_id' => auth()->id()])->exists()) {
             $property->favorites()->create(['user_id' => auth()->id()]);
         }
-        // we're working with the properties favorite table now
+        //auth()->user()->favorites()->attach($property->id);
         return back();
     }
 
     public function destroy(Property $property)
     {
         $property->favorites()->where(['user_id' => auth()->id()])->get()->each->delete();
-        // why are we getting each of the favorites and deleting them, is it not only one?
+        //auth()->user()->favorites()->detach($property->id);
         return back();
     }
 }
