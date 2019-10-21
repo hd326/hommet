@@ -36,3 +36,7 @@ npm run dev
 * Run the database migrations
 * Run php artisan db:seed
 * Set featured = 1 in the database for Communities and Properties to see the featured portion on the landing page, you can then browse to these properties.
+
+### Step 3
+
+Enjoy!
