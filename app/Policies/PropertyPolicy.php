@@ -18,7 +18,7 @@ class PropertyPolicy
      */
     public function viewAny(User $user)
     {
-        //
+        return $user->id == auth()->id();
     }
 
     /**
@@ -30,7 +30,7 @@ class PropertyPolicy
      */
     public function view(User $user, Property $property)
     {
-        return $property->user_id == $user->id; 
+        return $user->id == $property->user_id;
     }
 
     /**

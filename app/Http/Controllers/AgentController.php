@@ -10,8 +10,15 @@ use Auth;
 
 class AgentController extends Controller
 {
-    public function index()
+    public function __construct()
     {
+        $this->middleware('auth');
+    }
+
+    public function index(Request $request)
+    {
+        //$request->user()->authorizeRoles(['agent']);
+
         $user = User::find(auth()->id());
         
         $properties = $user->properties;
@@ -19,22 +26,29 @@ class AgentController extends Controller
         return view('agents.index', compact('properties', 'user'));
     }
 
-    public function edit($agentId, $propertyId)
+    public function edit(Request $request, $agentId, Property $property)
     {
+        //$request->user()->authorizeRoles(['agent']);
         
-        $property = Property::find($propertyId);
+        $user = User::find(auth()->id());
 
-        if ($property->user_id !== auth()->id()) {
-           return response()->json(['error' => 'Unauthenticated.'], 401); //Throw Unauthenticated error
-        }
+        $property = Property::find($property->id);
+
+        // $this->authorize('view', Property::class);
+
+        //if ($property->user_id !== auth()->id()) {
+        //   return response()->json(['error' => 'Unauthenticated.'], 401); //Throw Unauthenticated error
+        //}
         //if ($property->user_id !== $agentId) {
         //    return response()->json(['error' => 'Bad Request.'], 400); //Throw Bad request error
         //}
         return view('agents.edit', compact('property'));
     }
 
-    public function update($agentId, $propertyId)
+    public function update(Request $request, $agentId, $propertyId)
     {
+        $request->user()->authorizeRoles(['agent']);
+
         $property = Property::find($propertyId);
 
         if ($property->user_id !== auth()->id() ){
@@ -70,9 +84,12 @@ class AgentController extends Controller
 
     public function store(Request $request, $agentId)
     {
+        $request->user()->authorizeRoles(['agent']);
 
         $user = User::find(auth()->id());
+
         $properties = $user->properties;
+
         request()->validate([
             'street_address' => 'required',
             'city' => 'required',
@@ -126,8 +143,10 @@ class AgentController extends Controller
         return view('agents.index', compact('properties', 'user'));
     }
 
-    public function show($agentId, $propertyId)
+    public function show(Request $request, $agentId, $propertyId)
     {
+        $request->user()->authorizeRoles(['agent']);
+
         $property = Property::find($propertyId);
 
         if($property->user_id !== auth()->id()){
@@ -137,8 +156,14 @@ class AgentController extends Controller
         return view('agents.show', compact('property'));
     }
 
-    public function destroy($agentId, $propertyId)
+    public function destroy(Request $request, $agentId, $propertyId)
     {
+        $request->user()->authorizeRoles(['agent']);
+
+        $user = User::find(auth()->id());
+
+        $properties = $user->properties;
+
         $property = Property::find($propertyId);
 
         if ($property->user_id !== auth()->id()){
@@ -147,7 +172,7 @@ class AgentController extends Controller
 
         $property->delete();
 
-        return view('agents.index');
+        return view('agents.index', compact('user'));
     }
 
     public function create()
