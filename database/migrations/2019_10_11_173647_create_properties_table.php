@@ -37,7 +37,7 @@ class CreatePropertiesTable extends Migration
             $table->integer('parking_space');
             $table->string('utilities');
             $table->text('details');
-            $table->integer('agent_id');
+            $table->integer('user_id');
             $table->boolean('featured')->nullable();
             $table->timestamps();
             // agent_id name phone_number broker_id

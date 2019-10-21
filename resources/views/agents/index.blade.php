@@ -7,7 +7,7 @@
             <h1>All Properties</h1>
         </div>
         <div class="col-md-2">
-            <a href="/properties/create" class="btn btn-lg btn-block btn-primary">Create Property</a>
+            <a href="/agents/{{ $user->id }}/create" class="btn btn-lg btn-block btn-primary">Create Property</a>
         </div>
         <div class="col-md-12">
             <hr>
@@ -33,7 +33,7 @@
                         <td>{{ $property->city }}</td>
                         <td>{{ $property->zip }}</td>
                         <td>{{ $property->price }}</td>
-                        <td><a href="/properties/{{ $property->id }}" class="btn-sm">View</a><a href="/properties/{{ $property->id }}/edit" class="btn-sm">Edit</a></td>
+                        <td><a href="/agents/{{ $property->user_id }}/{{ $property->id }}" class="btn-sm">View</a><a href="/agents/{{ $property->user_id }}/{{ $property->id }}/edit" class="btn-sm">Edit</a></td>
                     </tr>
                     @endforeach
                 </tbody>

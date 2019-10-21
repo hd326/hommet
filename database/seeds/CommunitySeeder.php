@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Community extends Seeder
+class CommunitySeeder extends Seeder
 {
     /**
      * Run the database seeds.

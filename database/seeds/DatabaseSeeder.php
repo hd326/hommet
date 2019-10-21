@@ -11,9 +11,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(Community::class);
-        $this->call(Property::class);
-        $this->call(Broker::class);
-        $this->call(Agent::class);
+        $this->call(CommunitySeeder::class);
+        //$this->call(RoleSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(PropertySeeder::class);
+        //$this->call(Broker::class);
+        //$this->call(Agent::class);
     }
 }

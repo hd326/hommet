@@ -121,7 +121,7 @@
                                         {{ $property->zip }}<br /><br />
 
                                         <input type="hidden" name="agent_email"
-                                            value="{{ $property->agent->email_address }}">
+                                            value="{{ $property->user->email }}">
                                         <label for="name">Your Name*:</label>
                                         <input name="name" class="form-control"><br>
                                         <label for="phone">Your Phone Number*:</label>
@@ -183,7 +183,7 @@
             <h2>Contact Agent</h2>
             <form action="/properties/{property}/agent-contact" method="POST">
                 @csrf
-                <input name="agent_email" type="hidden" value="{{ $property->agent->email_address }}">
+                <input name="agent_email" type="hidden" value="{{ $property->user->email }}">
                 <input name="name" placeholder="Name" value={{ old('name')}}>
                 {{ $errors->first('name') }}
                 <input name="phone_number" placeholder="Phone" value={{ old('phone')}}>
@@ -199,9 +199,9 @@
         <div id="property-side-image">
             <img src="../images/woman.jpg">
             <div id="property-side-agent-detail">
-                {{ $property->agent->phone_number }}<br>
-                {{ $property->agent->email_address }}<br>
-                {{ ucfirst($property->agent->broker->name) }} Group
+                {{-- {{ $property->agent->phone_number }}<br> --}}
+                {{ $property->user->email }}<br>
+                {{-- {{ ucfirst($property->agent->broker->name) }} Group --}}
 
             </div>
         </div>

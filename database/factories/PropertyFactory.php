@@ -7,6 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(App\Property::class, function (Faker $faker) {
     $cities = ['Roseville', 'Elk Grove', 'Rocklin', 'Citrus Heights'];
+    $user = App\User::inRandomOrder()->first();
     return [
         'street_address' => $faker->streetAddress,
         'city' => $cities[array_rand($cities)],
@@ -29,6 +30,6 @@ $factory->define(App\Property::class, function (Faker $faker) {
         'parking_space' => rand(3,6),
         'utilities' => 'Cable Available, Electricity Available, Phone Available, Sewer Available, Water Available',
         'details' => $faker->text($maxNbChars = 400),
-        'agent_id' => rand(1,12)
+        'user_id' => rand(1,12)
     ];
 });

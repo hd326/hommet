@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class Property extends Seeder
+class BrokerSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -11,6 +11,6 @@ class Property extends Seeder
      */
     public function run()
     {
-        factory(App\Property::class, 50)->create();
+        factory(App\Broker::class, 10)->create();
     }
 }

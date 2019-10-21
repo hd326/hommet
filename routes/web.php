@@ -20,6 +20,7 @@ Route::get('/communities/{community}', 'CommunityController@show');
 Route::get('/properties/', 'PropertyController@index');
 Route::get('/properties/{property}', 'PropertyController@show');
 // here we are showing individual properties, not all of them
+
 Route::post('/properties/{property}/agent-contact', 'PropertyController@agentContact');
 Route::post('/properties/{property}/schedule-contact', 'PropertyController@scheduleContact');
 
@@ -27,6 +28,15 @@ Route::get('/profile/{user}', 'ProfileController@show');
 
 Route::post('/properties/{property}/favorite', 'FavoriteController@store');
 Route::delete('/properties/{property}/favorite', 'FavoriteController@destroy');
+
+
+Route::get('/agents/{agent}', 'AgentController@index');
+Route::post('/agents/{agent}', 'AgentController@store');
+Route::get('/agents/{agent}/create', 'AgentController@create');
+Route::get('/agents/{agent}/{property}/edit', 'AgentController@edit')->name('agent.property.edit');
+Route::get('/agents/{agent}/{property}', 'AgentController@show')->name('agent.property.show');
+Route::post('/agents/{agent}/{property}', 'AgentController@update')->name('agent.property.update');
+Route::delete('/agents/{agent}/{property}', 'AgentController@destroy')->name('agent.property.destroy');
 
 
 Auth::routes();
