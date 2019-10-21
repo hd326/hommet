@@ -9,7 +9,7 @@
 
 ## Hommet
 
-This application is a real estate design with some database-driven features such as property listing, viewing communities, viewing properties, favoriting properties, user and agent authentication, and contact forms.
+This application is a real estate design with some database-driven features such as CRUD functionality for agents, property listing, viewing communities, viewing properties, favoriting properties, user and agent authentication, and contact forms.
 
 To get started:
 
