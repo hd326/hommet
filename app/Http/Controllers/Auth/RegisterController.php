@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'type' => ['required', 'string', 'max:255']
         ]);
     }
 
@@ -71,7 +72,7 @@ class RegisterController extends Controller
         ]);
         $user
             ->roles()
-            ->attach(Role::where('name', 'agent')->first());
+            ->attach(Role::where('name', $data['type'])->first());
         return $user;
     }
 }
