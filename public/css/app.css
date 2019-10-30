@@ -9883,6 +9883,85 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
   font-size: 24px;
 }
 
+#header-responsive {
+  background-color: black;
+  display: grid;
+  grid-template-columns: 0.6fr 1fr 0.2fr;
+  width: 100%;
+}
+#header-responsive .header-responsive-sec:nth-of-type(1) ul li {
+  padding: 10px 0px;
+  font-family: "Crimson Text";
+  font-size: 1.5rem;
+  letter-spacing: 5px;
+  line-height: 30px;
+  text-align: center;
+}
+#header-responsive .header-responsive-sec:nth-of-type(1) ul li a {
+  text-decoration: none;
+  color: white;
+}
+#header-responsive .header-responsive-sec:nth-of-type(1) ul li span#logo-text {
+  font-family: "Crimson Text";
+  color: #c2a500;
+}
+#header-responsive .header-responsive-sec:nth-of-type(1) ul li span#logo-aide {
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  display: grid;
+  justify-content: center;
+}
+#header-responsive .header-responsive-sec:nth-of-type(2) nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 0.8rem;
+  position: relative;
+  letter-spacing: 1px;
+  padding-top: 27.5px;
+}
+#header-responsive .header-responsive-sec:nth-of-type(2) nav ul li:nth-of-type(1) {
+  margin-left: 0px;
+}
+#header-responsive .header-responsive-sec:nth-of-type(3) {
+  padding-top: 27.5px;
+}
+#header-responsive .header-responsive-sec:nth-of-type(3) nav ul {
+  list-style: none;
+}
+#header-responsive .header-responsive-sec:nth-of-type(3) nav ul li {
+  position: relative;
+  display: inline-block;
+  margin-left: 20px;
+}
+#header-responsive .header-responsive-sec:nth-of-type(3) nav ul li:nth-of-type(1):after {
+  position: absolute;
+  content: "";
+  width: 1px;
+  background-color: grey;
+  height: 25px;
+  margin: auto;
+  margin-left: 10px;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+}
+
+@media screen and (max-width: 1094px) {
+  #header-responsive {
+    grid-template-columns: 0.4fr 1fr 0.2fr;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(2) {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 973px) {
+  #header-responsive {
+    display: none;
+  }
+}
 #icon {
   width: 22.5px;
   height: 22.5px;
