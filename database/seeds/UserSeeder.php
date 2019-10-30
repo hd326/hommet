@@ -40,6 +40,6 @@ class UserSeeder extends Seeder
         $user->save();
         $user->roles()->attach($role_user);
         
-        //factory(App\User::class, 11)->create();
+        factory(App\User::class, 10)->create();
     }
 }
