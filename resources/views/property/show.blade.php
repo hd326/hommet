@@ -120,8 +120,7 @@
                                         Re: {{ $property->street_address }}, {{ $property->city }},
                                         {{ $property->zip }}<br /><br />
 
-                                        <input type="hidden" name="agent_email"
-                                            value="{{ $property->user->email }}">
+                                        <input type="hidden" name="agent_email" value="{{ $property->user->email }}">
                                         <label for="name">Your Name*:</label>
                                         <input name="name" class="form-control"><br>
                                         <label for="phone">Your Phone Number*:</label>
@@ -144,7 +143,6 @@
                                 </div>
                             </div>
                         </div>
-
                 </h2>
                 </form>
             </div>

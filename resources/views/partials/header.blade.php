@@ -98,15 +98,24 @@
 
 <script>
     $(function () {
-
-    });
-
-    $(window).scroll(function () {
-        if ($(window).scrollTop() >= 200) {
-            $('header #header-responsive').addClass('fixed');
+        $(window).scroll(function () {
+        if ($(window).scrollTop() >= 85 && $('header #header-responsive').width() > 1094) {
+            $('header #header-responsive').css({
+                position: 'fixed',
+                width: '100%',
+                top: '0',
+                transition: '.5s ease',
+                opacity: '1'
+                });
         } else {
-            $('header #header-responsive').removeClass('fixed');
+            $('header #header-responsive').css({
+                top: '-100%',
+                opacity: '0'
+            });
         }
     });
+    });
+
+    
 
 </script>

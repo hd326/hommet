@@ -243,8 +243,10 @@ header {
     display: grid;
     grid-template-columns: .6fr 1fr .2fr;
     width: 100%;
-
-
+    top: -100%;
+    z-index: 2;
+    position: absolute;
+    opacity: 0;
     .header-responsive-sec:nth-of-type(1) {
 
         //transform: translateX(-7.5px);
@@ -557,7 +559,7 @@ header {
         border-right: 2px solid #f4f4f4;
         width: 30px;
         height: 30px;
-        z-index: 5;
+        z-index: 2;
         color: white;
 
     }
@@ -1340,7 +1342,7 @@ header {
         border-right: 2px solid #f4f4f4;
         width: 30px;
         height: 30px;
-        z-index: 5;
+        z-index: 0;
         color: white;
         cursor: pointer;
     }
@@ -1689,11 +1691,11 @@ footer {
     }
 }
 
-// BEGIN PROPERTY PAGE
-// BEGIN PROPERTY PAGE
-// BEGIN PROPERTY PAGE
-// BEGIN PROPERTY PAGE
-// BEGIN PROPERTY PAGE
+/* BEGIN PROPERTY PAGE */
+/* BEGIN PROPERTY PAGE */
+/* BEGIN PROPERTY PAGE */
+/* BEGIN PROPERTY PAGE */
+/* BEGIN PROPERTY PAGE */
 
 #property-hero {
     position: relative;
@@ -2020,5 +2022,49 @@ footer {
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
         }
+    }
+}
+
+/* BEGIN PROPERTIES LINK */
+
+#properties-hero {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    z-index: 1;
+
+    #properties-hero-background-text {
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        position: relative;
+        width: 70%;
+        margin: auto;
+        height: 100%;
+        z-index: 2;
+        text-align: center;
+
+        h2 {
+
+            color: white;
+            font-size: 3rem;
+        }
+    }
+
+    #properties-hero-background-image-helper {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: rgba(0, 0, 0, 0.25);
+    }
+
+    .properties-hero-background-image {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-image: url('../images/2.jpg');
     }
 }
