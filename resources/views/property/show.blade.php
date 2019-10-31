@@ -34,7 +34,7 @@
             @endif
 
         </div>
-        <img id="property-main-picture" src="../images/1.jpg">
+        <img id="property-main-picture" src="/images/1.jpg">
 
         <div id="property-slider-container-main">
             <div id="property-arrow-left" class="property-arrow"></div>
@@ -43,47 +43,47 @@
                 <div id="property-slider-container">
                     <div class="properties properties1" id="lastClone">
                         <div class="properties-content">
-                            <img src="../images/7-small.jpg">
-                            <img src="../images/8-small.jpg">
-                            <img src="../images/9-small.jpg">
-                            <img src="../images/8-small.jpg">
-                            <img src="../images/7-small.jpg">
+                            <img src="/images/7-small.jpg">
+                            <img src="/images/8-small.jpg">
+                            <img src="/images/9-small.jpg">
+                            <img src="/images/8-small.jpg">
+                            <img src="/images/7-small.jpg">
                         </div>
                     </div>
                     <div class="properties properties2">
                         <div class="properties-content">
-                            <img src="../images/1-small.jpg">
-                            <img src="../images/2-small.jpg">
-                            <img src="../images/3-small.jpg">
-                            <img src="../images/2-small.jpg">
-                            <img src="../images/1-small.jpg">
+                            <img src="/images/1-small.jpg">
+                            <img src="/images/2-small.jpg">
+                            <img src="/images/3-small.jpg">
+                            <img src="/images/2-small.jpg">
+                            <img src="/images/1-small.jpg">
                         </div>
                     </div>
                     <div class="properties properties3">
                         <div class="properties-content">
-                            <img src="../images/4-small.jpg">
-                            <img src="../images/5-small.jpg">
-                            <img src="../images/6-small.jpg">
-                            <img src="../images/5-small.jpg">
-                            <img src="../images/4-small.jpg">
+                            <img src="/images/4-small.jpg">
+                            <img src="/images/5-small.jpg">
+                            <img src="/images/6-small.jpg">
+                            <img src="/images/5-small.jpg">
+                            <img src="/images/4-small.jpg">
                         </div>
                     </div>
                     <div class="properties properties4">
                         <div class="properties-content">
-                            <img src="../images/7-small.jpg">
-                            <img src="../images/8-small.jpg">
-                            <img src="../images/9-small.jpg">
-                            <img src="../images/8-small.jpg">
-                            <img src="../images/7-small.jpg">
+                            <img src="/images/7-small.jpg">
+                            <img src="/images/8-small.jpg">
+                            <img src="/images/9-small.jpg">
+                            <img src="/images/8-small.jpg">
+                            <img src="/images/7-small.jpg">
                         </div>
                     </div>
                     <div class="properties properties5" id="firstClone">
                         <div class="properties-content">
-                            <img src="../images/1-small.jpg">
-                            <img src="../images/2-small.jpg">
-                            <img src="../images/3-small.jpg">
-                            <img src="../images/2-small.jpg">
-                            <img src="../images/1-small.jpg">
+                            <img src="/images/1-small.jpg">
+                            <img src="/images/2-small.jpg">
+                            <img src="/images/3-small.jpg">
+                            <img src="/images/2-small.jpg">
+                            <img src="/images/1-small.jpg">
                         </div>
                     </div>
                 </div>
@@ -195,7 +195,7 @@
             </form>
         </div>
         <div id="property-side-image">
-            <img src="../images/woman.jpg">
+            <img src="/images/woman.jpg">
             <div id="property-side-agent-detail">
                 {{-- {{ $property->agent->phone_number }}<br> --}}
                 {{ $property->user->email }}<br>

@@ -12,10 +12,29 @@ use Illuminate\Support\Facades\Mail;
 
 class PropertyController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $properties = Property::all();
-        return view('property.index', compact('properties'));
+        $query = $request->input('queryOptions');
+        if(!empty($query)){
+        if($query == 'Price Ascending'){
+            $properties = Property::orderBy('price', 'asc');
+        }
+        if($query == 'Price Descending'){
+            $properties = Property::orderBy('price', 'desc');
+        }
+        if($query == 'Most Recent'){
+            $properties = Property::latest();
+        }
+        if($query == 'A-Z'){
+            $properties = Property::orderBy('city', 'asc');
+        }
+        if($query == 'Most Recent'){
+            $properties = Property::latest();
+        }
+    }
+
+        $properties = $properties->paginate(10);
+        return view('property.index', compact('properties', 'query'));
     }
 
     public function show($id)

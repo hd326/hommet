@@ -71,7 +71,7 @@
                     <span class="main-categories-text">HOME</span>
                 </li>
                 <li class="main-categories">
-                    <span class="main-categories-text">PROPERTIES</span>
+                    <span class="main-categories-text"><a href="{{ url('/properties') }}">PROPERTIES</a></span>
                 </li>
                 <li class="main-categories">
                     <i class="caret fas fa-chevron-down fa-1x"></i>
