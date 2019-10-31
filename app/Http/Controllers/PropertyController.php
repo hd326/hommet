@@ -14,27 +14,37 @@ class PropertyController extends Controller
 {
     public function index(Request $request)
     {
-        $query = $request->input('queryOptions');
-        if(!empty($query)){
-        if($query == 'Price Ascending'){
+        $sort = $request->input('sort');
+        if(!empty($sort)){
+        if($sort == 'Price Ascending'){
             $properties = Property::orderBy('price', 'asc');
+            $properties = $properties->paginate(10);
         }
-        if($query == 'Price Descending'){
+        if($sort == 'Price Descending'){
             $properties = Property::orderBy('price', 'desc');
+            $properties = $properties->paginate(10);
         }
-        if($query == 'Most Recent'){
+        if($sort == 'Most Recent'){
             $properties = Property::latest();
+            $properties = $properties->paginate(10);
         }
-        if($query == 'A-Z'){
+        if($sort == 'A-Z'){
             $properties = Property::orderBy('city', 'asc');
+            $properties = $properties->paginate(10);
         }
-        if($query == 'Most Recent'){
+        if($sort == 'Z-A'){
+            $properties = Property::orderBy('city', 'desc');
+            $properties = $properties->paginate(10);
+        }
+        if($sort == 'Most Recent'){
             $properties = Property::latest();
+            $properties = $properties->paginate(10);
         }
+    } else {
+        $properties = Property::paginate(10);
     }
 
-        $properties = $properties->paginate(10);
-        return view('property.index', compact('properties', 'query'));
+        return view('property.index', compact('properties', 'sort'));
     }
 
     public function show($id)

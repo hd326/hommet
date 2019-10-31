@@ -14,12 +14,12 @@
         <div id="properties-query">
         <h2>Properties</h2>
         <form action="/properties">
-            <select name="queryOptions">
-                <option>Price Ascending</option>
-                <option>Price Descending</option>
-                <option>Most Recent</option>
-                <option>A-Z</option>
-                <option>Z-A</option>
+            <select name="sort">
+                <option {{ $sort == 'Price Ascending' ? 'selected' : ''}}>Price Ascending</option>
+                <option {{ $sort == 'Price Descending' ? 'selected' : ''}}>Price Descending</option>
+                <option {{ $sort == 'Most Recent' ? 'selected' : ''}}>Most Recent</option>
+                <option {{ $sort == 'A-Z' ? 'selected' : ''}}>A-Z</option>
+                <option {{ $sort == 'Z-A' ? 'selected' : ''}}>Z-A</option>
             </select>
             <button type="submit">Submit</button>
         </form>
@@ -27,13 +27,14 @@
         @foreach($properties as $property)
         <div class="properties-card">
             <a href="/properties/{{ $property->id }}/">
-            <div class="properties-img"><img src="../images/1.jpg"></div>
+                @foreach ($property->images->take(1) as $image)
+                <div class="properties-img"><img src="{{ $image->src }}"></div>
+                @endforeach
             <div class="properties-details">
                 <div class="street-address-price">
                         <h3>{{ $property->city }}</h3>
                         <h3>${{ number_format($property->price) }}</h3>
                 </div>
-                
                 <hr>
                 <p><i class="fas fa-bed"></i> {{ $property->bedrooms }} <i class="fas fa-bath"></i> {{ $property->bathrooms }} </p>
                 <hr>
@@ -45,7 +46,7 @@
         <hr>
         @endforeach
 
-        {{ $properties->appends(['queryOptions' => $query ])->links() }}
+        {{ $properties->appends(['sort' => $sort ])->links() }}
         
 
     </div>

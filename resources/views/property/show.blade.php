@@ -43,47 +43,64 @@
                 <div id="property-slider-container">
                     <div class="properties properties1" id="lastClone">
                         <div class="properties-content">
-                            <img src="/images/7-small.jpg">
+                            {{-- <img src="/images/7-small.jpg">
                             <img src="/images/8-small.jpg">
                             <img src="/images/9-small.jpg">
                             <img src="/images/8-small.jpg">
-                            <img src="/images/7-small.jpg">
+                            <img src="/images/7-small.jpg"> --}}
+                            @foreach($property->images->slice(10, 15) as $image)
+                                <img src="{{ $image->src }}">
+                            @endforeach
+                            
                         </div>
                     </div>
                     <div class="properties properties2">
                         <div class="properties-content">
-                            <img src="/images/1-small.jpg">
+                            {{-- <img src="/images/1-small.jpg">
                             <img src="/images/2-small.jpg">
                             <img src="/images/3-small.jpg">
                             <img src="/images/2-small.jpg">
-                            <img src="/images/1-small.jpg">
+                            <img src="/images/1-small.jpg"> --}}
+                            @foreach($property->images->slice(0, 5) as $image)
+                                <img src="{{ $image->src }}">
+                            @endforeach
+ 
                         </div>
                     </div>
                     <div class="properties properties3">
                         <div class="properties-content">
-                            <img src="/images/4-small.jpg">
+                                @foreach($property->images->slice(5, 10) as $image)
+                                <img src="{{ $image->src }}">
+                            @endforeach
+                            {{-- <img src="/images/4-small.jpg">
                             <img src="/images/5-small.jpg">
                             <img src="/images/6-small.jpg">
                             <img src="/images/5-small.jpg">
-                            <img src="/images/4-small.jpg">
+                            <img src="/images/4-small.jpg"> --}}
                         </div>
                     </div>
                     <div class="properties properties4">
                         <div class="properties-content">
-                            <img src="/images/7-small.jpg">
+                            {{-- <img src="/images/7-small.jpg">
                             <img src="/images/8-small.jpg">
                             <img src="/images/9-small.jpg">
                             <img src="/images/8-small.jpg">
-                            <img src="/images/7-small.jpg">
+                            <img src="/images/7-small.jpg"> --}}
+                            @foreach($property->images->slice(10, 15) as $image)
+                                <img src="{{ $image->src }}">
+                            @endforeach
                         </div>
                     </div>
                     <div class="properties properties5" id="firstClone">
                         <div class="properties-content">
-                            <img src="/images/1-small.jpg">
+                            {{-- <img src="/images/1-small.jpg">
                             <img src="/images/2-small.jpg">
                             <img src="/images/3-small.jpg">
                             <img src="/images/2-small.jpg">
-                            <img src="/images/1-small.jpg">
+                            <img src="/images/1-small.jpg"> --}}
+                            @foreach($property->images->slice(0, 5) as $image)
+                            <img src="{{ $image->src }}">
+                        @endforeach
                         </div>
                     </div>
                 </div>

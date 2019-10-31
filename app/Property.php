@@ -29,4 +29,9 @@ class Property extends Model
         return !! $this->favorites()->where('user_id', auth()->id())->count();
         // is the property favorited
     }
+
+    public function images()
+    {
+        return $this->hasMany(PropertyImages::class, 'property_id');
+    }
 }
