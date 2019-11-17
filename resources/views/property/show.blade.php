@@ -199,12 +199,12 @@
             <form action="/properties/{property}/agent-contact" method="POST">
                 @csrf
                 <input name="agent_email" type="hidden" value="{{ $property->user->email }}">
-                <input name="name" placeholder="Name" value={{ old('name')}}>
+                <input name="name" placeholder="Name" value={{ old('name') }}>
                 {{ $errors->first('name') }}
                 <input name="phone_number" placeholder="Phone" value={{ old('phone')}}>
-                {{ $errors->first('phone') }}
+                {{ $errors->first('phone_number') }}
                 <input name="email_address" placeholder="Email" value={{ old('email')}}>
-                {{ $errors->first('email') }}
+                {{ $errors->first('email_address') }}
                 <textarea name="message" rows="5">I would like to learn more about this listing.</textarea>
                 {{ $errors->first('message') }}
                 <button type="submit">Contact Agent</button>

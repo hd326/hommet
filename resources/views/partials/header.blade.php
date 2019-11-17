@@ -23,13 +23,13 @@
         <div class="header-responsive-sec">
             <nav>
                 <ul>
-                    <li>HOMES</li>
-                    <li>PROPERTIES</li>
-                    <li>COMMUNITIES</li>
-                    <li>BUYERS</li>
-                    <li>SELLERS</li>
-                    <li>ABOUT</li>
-                    <li>CONTACT</li>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">PROPERTIES</a></li>
+                    <li><a href="">COMMUNITIES</a></li>
+                    <li><a href="">BUYERS</a></li>
+                    <li><a href="">SELLERS</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
@@ -68,28 +68,26 @@
             </ul>
             <ul id="bottom-nav">
                 <li class="main-categories">
-                    <span class="main-categories-text">HOME</span>
+                    <span class="main-categories-text"><a href="{{ url('/') }}">HOME</a></span>
                 </li>
                 <li class="main-categories">
                     <span class="main-categories-text"><a href="{{ url('/properties') }}">PROPERTIES</a></span>
                 </li>
-                <li class="main-categories">
-                    <i class="caret fas fa-chevron-down fa-1x"></i>
-                    <span class="main-categories-text">COMMUNITIES</span>
+                <li class="main-categories">  
+                    <span class="main-categories-text"><a href="">COMMUNITIES</a></span>
                 </li>
                 <li class="main-categories">
-                    <i class="caret fas fa-chevron-down fa-1x"></i>
-                    <span class="main-categories-text">BUYERS</span>
+                    <span class="main-categories-text"><a href="">BUYERS</a></span>
                 </li>
                 <li class="main-categories">
-                    <span class="main-categories-text">SELLERS</span>
+                    <span class="main-categories-text"><a href="">SELLERS</a></span>
 
                 </li>
                 <li class="main-categories">
-                    <span class="main-categories-text">ABOUT</span>
+                    <span class="main-categories-text"><a href="">ABOUT</a></span>
                 </li>
                 <li class="main-categories">
-                    <span class="main-categories-text">CONTACT</span>
+                    <span class="main-categories-text"><a href="">CONTACT</a></span>
                 </li>
             </ul>
         </nav>

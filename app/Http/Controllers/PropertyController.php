@@ -47,6 +47,11 @@ class PropertyController extends Controller
         return view('property.index', compact('properties', 'sort'));
     }
 
+    public function index2()
+    {
+
+    }
+
     public function show($id)
     {
         $user = auth()->user();

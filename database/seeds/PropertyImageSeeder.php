@@ -11,6 +11,6 @@ class PropertyImageSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\PropertyImage::class, 150)->create();
+        factory(App\PropertyImage::class, 100)->create();
     }
 }

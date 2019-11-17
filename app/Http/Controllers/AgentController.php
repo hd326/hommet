@@ -17,7 +17,7 @@ class AgentController extends Controller
 
     public function index(Request $request)
     {
-        //$request->user()->authorizeRoles(['agent']);
+        $request->user()->authorizeRoles(['agent']);
 
         $user = User::find(auth()->id());
         
@@ -28,7 +28,7 @@ class AgentController extends Controller
 
     public function edit(Request $request, $agentId, Property $property)
     {
-        //$request->user()->authorizeRoles(['agent']);
+        $request->user()->authorizeRoles(['agent']);
         
         $user = User::find(auth()->id());
 

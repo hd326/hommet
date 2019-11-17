@@ -9760,8 +9760,8 @@ header {
 header #header-container {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: 0.4fr 1fr;
-  width: 95%;
+  grid-template-columns: 0.3fr 1fr;
+  width: 1180px;
   margin: auto;
   padding-top: 27.5px;
 }
@@ -9799,10 +9799,16 @@ header #header-container #right-side {
   justify-self: flex-end;
   margin-top: 0px;
 }
+header #header-container #right-side ul#top-nav {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
 header #header-container #right-side ul#top-nav li.top-main {
   display: inline-block;
   margin-left: 40px;
   position: relative;
+  font-size: 1.2em;
 }
 header #header-container #right-side ul#top-nav li.top-main:nth-of-type(2) i, header #header-container #right-side ul#top-nav li.top-main:nth-of-type(3) i {
   color: #c2a500;
@@ -9824,10 +9830,19 @@ header #header-container #right-side ul#top-nav li#social-media ul li {
 }
 header #header-container #right-side ul#bottom-nav li.main-categories {
   display: inline-block;
-  margin-left: 20px;
+  margin-top: -5px;
   font-size: 0.8rem;
   position: relative;
   letter-spacing: 1px;
+  height: 100%;
+}
+header #header-container #right-side ul#bottom-nav li.main-categories a {
+  padding: 10px 20px;
+}
+header #header-container #right-side ul#bottom-nav li.main-categories a:hover {
+  background-color: #c2a500;
+  transition: 0.3s ease-out;
+  border-radius: 50px;
 }
 header #header-container #right-side ul#bottom-nav li.main-categories.active .main-categories-text {
   color: #c2a500;
@@ -9886,8 +9901,8 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
 #header-responsive {
   background-color: black;
   display: grid;
-  grid-template-columns: 0.6fr 1fr 0.2fr;
-  width: 100%;
+  grid-template-columns: 0.5fr 1fr 0.2fr;
+  width: 1100px;
   top: -100%;
   z-index: 2;
   position: absolute;
@@ -9918,11 +9933,22 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
 }
 #header-responsive .header-responsive-sec:nth-of-type(2) nav ul li {
   display: inline-block;
-  margin-left: 20px;
+  margin-top: -5px;
   font-size: 0.8rem;
   position: relative;
   letter-spacing: 1px;
-  padding-top: 27.5px;
+  height: 100%;
+  padding-top: 30px;
+}
+#header-responsive .header-responsive-sec:nth-of-type(2) nav ul li a {
+  padding: 10px 17.5px;
+  text-decoration: none;
+  color: white;
+}
+#header-responsive .header-responsive-sec:nth-of-type(2) nav ul li a:hover {
+  background-color: #c2a500;
+  transition: 0.3s ease-out;
+  border-radius: 50px;
 }
 #header-responsive .header-responsive-sec:nth-of-type(2) nav ul li:nth-of-type(1) {
   margin-left: 0px;
@@ -9953,9 +9979,32 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
   width: 100%;
 }
 
-@media screen and (max-width: 1094px) {
+@media screen and (max-width: 1301px) {
   #header-responsive {
     grid-template-columns: 0.4fr 1fr 0.2fr;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(1) ul li span#logo-text {
+    font-size: 0.8em;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(1) ul li span#logo-aide {
+    letter-spacing: 2px;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(2) {
+    text-align: center;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(2) nav ul li a {
+    padding: 10px 11px;
+  }
+}
+@media screen and (max-width: 1094px) {
+  #header-responsive {
+    grid-template-columns: 0.3fr 1fr 0.2fr;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(1) span#logo-text {
+    font-size: 0.8em;
+  }
+  #header-responsive .header-responsive-sec:nth-of-type(1) span#logo-aide {
+    letter-spacing: 2px;
   }
   #header-responsive .header-responsive-sec:nth-of-type(2) {
     text-align: center;
@@ -10025,7 +10074,16 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
   transform: rotate(135deg);
 }
 
-@media screen and (max-width: 991px) {
+@media screen and (max-width: 1230px) {
+  header #header-container {
+    grid-template-columns: 0.4fr 1fr;
+    width: 1000px;
+  }
+  header #header-container #right-side ul#bottom-nav li.main-categories a {
+    padding: 10px 15px;
+  }
+}
+@media screen and (max-width: 1121px) {
   header {
     background-color: #222;
     position: relative;
@@ -10036,6 +10094,7 @@ header #header-container #right-side ul#bottom-nav li.main-categories a {
   header #header-container {
     grid-template-columns: 1fr;
     height: 100%;
+    width: 100%;
   }
   header #header-container #left-side {
     text-align: center;
